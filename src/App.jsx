@@ -6,8 +6,11 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 
 function App() {
+  const rawBase = import.meta.env.BASE_URL ?? '/';
+  const basename = rawBase === '/' ? '/' : rawBase.replace(/\/$/, '');
+  
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work" element={<Work />} />
