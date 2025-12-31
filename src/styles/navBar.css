@@ -1,0 +1,70 @@
+.site-nav { background: var(--bg-color); border-bottom: 1px solid rgba(0,0,0,0.06); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(16,24,40,0.06); }
+.site-nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0.65rem 1rem; display:flex; align-items:center; gap:1rem; height:56px; }
+.site-brand { display:flex; align-items:center; gap:0.6rem; }
+.brand-icon { width:28px; height:28px; display:inline-block; }
+.brand-link { font-weight: 800; color: var(--text-color); text-decoration: none; font-size: 1rem; }
+.brand-sep { color: var(--muted-color); margin-left: 0.5rem; margin-right: 0.75rem; }
+.site-links { display:flex; gap: 0.75rem; align-items:center; margin-left: auto; }
+.nav-link { padding: 0.35rem 0.5rem; border-radius: 4px; text-decoration: none; color: var(--text-color); font-weight: 500; }
+.nav-link:hover, .nav-link:focus { opacity: 0.9; text-decoration: underline; }
+.nav-link.active { background: none; color: var(--text-color); border-bottom: 2px solid var(--text-color); padding-bottom: calc(0.35rem - 2px); }
+
+/* Theme toggle button (placed after brand) */
+.theme-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	background: transparent;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	cursor: pointer;
+	margin-left: 6px;
+}
+.theme-toggle:hover { background: rgba(0,0,0,0.03); }
+.theme-toggle:focus { outline: none; box-shadow: 0 0 0 3px rgba(17,17,17,0.08); }
+.theme-icon {
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	position: relative;
+}
+/* Use pseudo-elements for both icons so we can cross-fade/animate */
+.theme-icon::before,
+.theme-icon::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	transition: opacity 280ms ease, transform 300ms cubic-bezier(.2,.9,.3,1);
+	will-change: opacity, transform;
+	pointer-events: none;
+}
+/* moon (light mode) */
+.theme-icon::before {
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'><path d='M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z'/></svg>");
+	opacity: 1;
+	transform: rotate(0deg) scale(1);
+}
+/* sun (dark mode) */
+.theme-icon::after {
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f5f5f5'><path d='M6.76 4.84l-1.8-1.79L3.17 4.85l1.79 1.79 1.8-1.8zM1 13h3v-2H1v2zm10-9h2V1h-2v3zm7.03 1.05l1.8-1.79-1.8-1.79-1.79 1.79 1.79 1.79zM17.24 19.16l1.79 1.79 1.8-1.79-1.8-1.79-1.79 1.79zM20 11v2h3v-2h-3zM12 6a6 6 0 100 12 6 6 0 000-12zM6.76 19.16l-1.79 1.79 1.79 1.79 1.79-1.79-1.79-1.79z' /></svg>");
+	opacity: 0;
+	transform: rotate(-10deg) scale(0.9);
+}
+/* When dark theme active, swap opacities and animate */
+:root[data-theme='dark'] .theme-icon::before,
+[data-theme='dark'] .theme-icon::before { opacity: 0; transform: rotate(10deg) scale(0.9); }
+:root[data-theme='dark'] .theme-icon::after,
+[data-theme='dark'] .theme-icon::after { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* Dark-mode tweaks for nav: lighter border and subtle icon hover */
+[data-theme='dark'] .site-nav { border-bottom-color: rgba(255,255,255,0.06); box-shadow: none; }
+[data-theme='dark'] .theme-toggle:hover { background: rgba(255,255,255,0.04); }
+[data-theme='dark'] .theme-toggle:focus { box-shadow: 0 0 0 3px rgba(245,245,245,0.06); }
+
+
+/* page-container moved to layout.css to centralize spacing rules */

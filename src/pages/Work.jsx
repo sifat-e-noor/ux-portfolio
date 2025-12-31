@@ -1,8 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import '../styles/work.css';
+import BackButton from '../components/BackButton';
 
 export default function Work() {
+  const { id } = useParams(); 
+
   const projects = [
     {
       id: 1,
@@ -24,6 +27,7 @@ export default function Work() {
 
   return (
     <div className="work-page">
+      <BackButton fallback="/" />
       <section className="work-hero">
         <h1>Mine Arbejder</h1>
         <p>Udvalgte UX/UI projekter og case studies</p>
@@ -49,6 +53,10 @@ export default function Work() {
             </div>
           </article>
         ))}
+            <div>
+                <h1>Work</h1>
+                    <p>Route id: {id}</p>
+            </div>
       </section>
     </div>
   );

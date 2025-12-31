@@ -1,0 +1,44 @@
+/* Global layout rules to ensure consistent page alignment and spacing */
+
+/* Central page container used by routed pages (set in App.jsx) */
+.page-container {
+  /* Match Home page container: max-width and horizontal padding */
+  max-width: 960px;
+  margin: 0 auto;
+  /* Reserve top space for fixed nav and keep Home's internal padding (4rem bottom spacing) */
+  padding: 72px 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+/* Reset direct child top margins so spacing is controlled here */
+.page-container > * { margin-top: 0; }
+
+/* Normalise common page wrapper classes so content aligns like Home */
+
+.home,
+.work-page,
+.case-study-container,
+.about,
+.contact,
+.ai-ux-container,
+.cv-page {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Provide consistent section spacing used across pages */
+
+/* Consistent spacing for sections across pages */
+.page-container section,
+.page-container > div,
+.page-container > article {
+  margin: 1.25rem 0;
+}
+
+/* Headings: consistent top/bottom rhythm inside the container */
+.page-container h1 { margin: 0 0 0.75rem; }
+.page-container h2 { margin: 1rem 0 0.6rem; }
+.page-container h3 { margin: 0.85rem 0 0.5rem; }
+
+/* Make sure images and cards don't overflow the container */
+img { max-width: 100%; height: auto; }

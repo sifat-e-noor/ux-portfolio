@@ -1,0 +1,26 @@
+.pdf-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.pdf-loading, .pdf-error {
+  color: var(--tertiary-color);
+}
+.pdf-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.pdf-controls button {
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.pdf-controls button:disabled { opacity: 0.5; cursor: default; }
+.pdf-canvas-wrap { max-width: 100%; overflow: auto; }
+.pdf-canvas-wrap canvas { display: block; max-width: 100%; height: auto; }

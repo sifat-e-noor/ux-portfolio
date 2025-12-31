@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './caseStudy.css';
+import "../styles/caseStudy.css";
+import BackButton from '../components/BackButton';
 
 export default function CaseStudy() {
   const [selectedStudy, setSelectedStudy] = useState(null);
@@ -39,6 +40,7 @@ export default function CaseStudy() {
 
   return (
     <div className="case-study-container">
+      <BackButton fallback="/work" />
       <header className="case-study-header">
         <h1>UX Case Studies</h1>
         <p>Selected projects showcasing UX design in Denmark</p>
