@@ -15,25 +15,41 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero" aria-labelledby="hero-heading">
-        <h1 id="hero-heading">
-          Designing Human-Centered Experiences for AI-Driven Products
-        </h1>
+        <header className="hero-header-row">
+          <img
+            src={`${import.meta.env.BASE_URL}profile.jpg`}
+            alt="Sifat-E-Noor"
+            className="hero-photo"
+          />
+          <div className="hero-header-text">
+            <p className="hero-name">Sifat-E-Noor</p>
+            <h1 id="hero-heading">
+              Senior UX Designer for AI-Driven Digital Products
+            </h1>
+          </div>
+        </header>
 
         <p className="hero-subtitle">
-          Senior UX Designer with a strong research background, specialising in
-          trustworthy, explainable, and usable AI-enabled digital products.
+          Senior UX Designer with 6+ years of experience designing complex,
+          data-driven products across industry and research contexts.
+          I help teams create clear, trustworthy, and usable experiences—
+          especially where AI supports human decision-making.
         </p>
 
-        <p>
-          I design systems where automation supports human judgment—never replaces it.
+        <p className="hero-statement">
+          I focus on turning complexity into confident user action.
         </p>
 
-        <div className="hero-actions" role="navigation" aria-label="Primary actions">
-          <Link className="primary-btn" to="/case-study">
+        <div
+          className="hero-actions"
+          role="navigation"
+          aria-label="Primary actions"
+        >
+          <Link to="/work" className="primary-btn">
             View case studies
           </Link>
-          <Link className="secondary-btn" to="/ai-and-ux">
-            Read about AI and UX
+          <Link to="/ai-and-ux" className="secondary-btn">
+            AI & UX approach
           </Link>
         </div>
       </section>
@@ -43,27 +59,25 @@ export default function Home() {
         <h2 id="focus-heading">My Focus</h2>
 
         <p>
-          I work at the intersection of UX, research, and AI, helping teams turn
-          complexity into clear, responsible product decisions.
+          I work closely with product and engineering teams to design <b>human-centered solutions for complex systems</b>, grounded in research, usability, and practical constraints.
         </p>
 
         <ul>
           <li>
-            <strong>UX Research & Insight:</strong> Framing problems, designing
-            studies, and translating behavioral insights into actionable direction.
+            <strong>UX Research & Problem Framing</strong> 
+              Defining the right problems through qualitative and quantitative research, and turning insights into clear product direction.
           </li>
           <li>
-            <strong>UX & Product Design:</strong> Interaction design, information
-            architecture, and prototyping for complex, data-driven systems.
+            <strong>UX & Product Design</strong> 
+              Designing interactions, information architecture, and scalable design systems for enterprise and AI-enabled products.
           </li>
           <li>
-            <strong>Human-Centered AI Design:</strong> Designing explainability,
-            feedback, and human-in-the-loop interactions that build trust without
-            increasing cognitive load.
+            <strong>Human-Centered AI Design</strong> 
+              Designing explainable, controllable, and supportive AI interactions that reduce cognitive load and build user trust.
           </li>
           <li>
-            <strong>Product & Design Leadership:</strong> Influencing decisions
-            across design, product, and engineering through evidence-based reasoning.
+            <strong>Cross-Functional Collaboration</strong> 
+              Aligning design decisions with business goals and technical feasibility through close collaboration with stakeholders.
           </li>
         </ul>
       </section>
@@ -83,8 +97,9 @@ export default function Home() {
       <section className="ai-philosophy" aria-labelledby="ai-heading">
         <h2 id="ai-heading">AI & Human-Centered Design</h2>
 
-        <p>AI introduces power—and risk.</p>
+        <p>AI introduces both opportunity and responsibility. AI changes how decisions are made—and who remains accountable.</p>
 
+        <p>My design principles:</p>
         <ul>
           <li>Explainability over opacity</li>
           <li>User agency over blind automation</li>
@@ -92,7 +107,7 @@ export default function Home() {
         </ul>
 
         <p>
-          Well-designed AI should help users make better decisions, not just faster ones.
+          I believe AI-enabled systems should help people make better decisions, not simply faster ones—and should always respect human judgment.
         </p>
 
         <Link to="/ai-and-ux">
@@ -105,8 +120,7 @@ export default function Home() {
         <h2 id="cta-heading">Let’s Work Together</h2>
 
         <p>
-          Open to Senior UX Designer, Product Designer (UX-focused), and UX Researcher
-          roles in Denmark.
+          Open to <strong>Senior UX Designer, Product Designer (UX-focused)</strong>, and <strong>UX Researcher</strong> roles in Denmark, particularly in teams working with AI-enabled or complex digital products.
         </p>
 
         <div className="cta-actions" role="navigation" aria-label="Contact actions">

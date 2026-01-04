@@ -1,3 +1,15 @@
+/* Flex row for hero header: photo left, text right */
+.hero-header-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.hero-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 /* Minimal styles for Home page and nav panel */
 .nav-panel { margin: 1rem 0; padding: 0.5rem; border: 1px solid #eee; background: #fafafa; border-radius: 6px; }
 .nav-panel ul { display: flex; gap: 0.5rem; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; }
@@ -10,7 +22,7 @@
 .home {
   max-width: 960px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 0 1.5rem 4rem;
 }
 
 section {
@@ -24,7 +36,7 @@ section {
 
 .hero-subtitle {
   font-size: 1.2rem;
-  max-width: 600px;
+  max-width: 960px;
 }
 
 .hero-actions {
@@ -68,3 +80,28 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+.hero-photo {
+  width: 200px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(16,24,40,0.10);
+  background: #f3f4f6;
+  border: 2px solid #e5e5e5;
+}
+
+.hero-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  margin-bottom: 0.75rem;
+}
+
+.hero-statement {
+  margin-top: 1rem;
+  font-size: 1rem;
+  max-width: 640px;
+}

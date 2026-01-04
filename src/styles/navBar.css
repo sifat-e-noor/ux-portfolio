@@ -1,13 +1,26 @@
 .site-nav { background: var(--bg-color); border-bottom: 1px solid rgba(0,0,0,0.06); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(16,24,40,0.06); }
-.site-nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0.65rem 1rem; display:flex; align-items:center; gap:1rem; height:56px; }
+.site-nav-inner { max-width: var(--max-width); margin: 0 auto; padding: 0.65rem 1rem; display:flex; align-items:center; gap:1rem; }
 .site-brand { display:flex; align-items:center; gap:0.6rem; }
 .brand-icon { width:28px; height:28px; display:inline-block; }
 .brand-link { font-weight: 800; color: var(--text-color); text-decoration: none; font-size: 1rem; }
 .brand-sep { color: var(--muted-color); margin-left: 0.5rem; margin-right: 0.75rem; }
 .site-links { display:flex; gap: 0.75rem; align-items:center; margin-left: auto; }
 .nav-link { padding: 0.35rem 0.5rem; border-radius: 4px; text-decoration: none; color: var(--text-color); font-weight: 500; }
-.nav-link:hover, .nav-link:focus { opacity: 0.9; text-decoration: underline; }
-.nav-link.active { background: none; color: var(--text-color); border-bottom: 2px solid var(--text-color); padding-bottom: calc(0.35rem - 2px); }
+.nav-link:hover, .nav-link:focus, .nav-link.active:hover, .nav-link.active:focus {
+	opacity: 0.9;
+	text-decoration: none;
+}
+.nav-link.active {
+	background: none;
+	color: var(--text-color);
+	border-bottom: 2px solid var(--text-color);
+	padding-bottom: calc(0.35rem - 2px);
+}
+.nav-link:not(.active):hover,
+.nav-link:not(.active):focus {
+  opacity: 0.9;
+  text-decoration: underline;
+}
 
 /* Theme toggle button (placed after brand) */
 .theme-toggle {

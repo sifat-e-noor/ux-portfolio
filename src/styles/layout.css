@@ -1,12 +1,18 @@
 /* Global layout rules to ensure consistent page alignment and spacing */
 
 /* Central page container used by routed pages (set in App.jsx) */
+/* Enforce top padding to always clear the fixed navbar */
+/* Increased navbar height for all themes and font sizes */
+:root {
+  /* Set navbar height to match .site-nav-inner's real height: logo (28px) + 2*0.65rem padding + any border */
+  --navbar-height: calc(28px + 1.3rem + 2px); /* 2px for border/shadow safety */
+}
 .page-container {
   /* Match Home page container: max-width and horizontal padding */
   max-width: 960px;
   margin: 0 auto;
-  /* Reserve top space for fixed nav and keep Home's internal padding (4rem bottom spacing) */
-  padding: 72px 1.5rem 4rem;
+  /* Use navbar height variable for top padding */
+  padding: var(--navbar-height) 1.5rem 4rem !important;
   box-sizing: border-box;
 }
 

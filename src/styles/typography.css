@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --body-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --body-font: 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   --text-color: #111111; /* near-black for maximum readability */
   --muted-color: #4A4A4A; /* secondary metadata */
   --tertiary-color: #7A7A7A; /* disabled / tertiary */
   --max-width: 960px;
+  --bg-color: #ffffff;
 }
 
 /* CTA and interaction colors */

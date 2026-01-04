@@ -27,7 +27,7 @@ export default function NavBar() {
 
         <nav className="site-links" aria-label="Main navigation">
           <NavLink to="/" end className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
-          <NavLink to="/work" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Work</NavLink>
+          <NavLink to="/case-study" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Work</NavLink>
           <NavLink to="/about" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>About</NavLink>
           <NavLink to="/ai-and-ux" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>AI &amp; UX</NavLink>
           <NavLink to="/cv" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>CV</NavLink>
