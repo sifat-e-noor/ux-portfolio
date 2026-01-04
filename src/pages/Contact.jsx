@@ -29,6 +29,12 @@ export default function Contact() {
 
         <ul className="contact-list">
           <li>
+            <strong>Phone</strong>
+            <span>
+              <a href="tel:+45 9163 9066">+45 9163 9066</a>
+            </span>
+          </li>
+          <li>
             <strong>Email</strong>
             <span>
               <a href="mailto:noor.sifat.e@gmail.com">
@@ -54,9 +60,8 @@ export default function Contact() {
             <strong>CV</strong>
             <span>
               <a
-                href="/cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`${import.meta.env.BASE_URL}Sifat-E-Noor_CV.pdf`}
+                download
               >
                 Download CV (PDF)
               </a>

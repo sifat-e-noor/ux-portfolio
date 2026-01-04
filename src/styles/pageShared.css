@@ -1,0 +1,518 @@
+/* Shared base page styles to match About, Contact, and AI&UX */
+
+/* Base layout: container width, centering, padding */
+.home,
+.work-page,
+.case-study-container,
+.cv-page,
+.case-study {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  box-sizing: border-box;
+}
+
+/* Section spacing */
+.home section,
+.work-page section,
+.case-study-container section,
+.cv-page section,
+.case-study section {
+  margin-bottom: 4rem;
+}
+
+/* Headings */
+.home h1,
+.work-page h1,
+.case-study-container h1,
+.cv-page h1,
+.case-study h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.home h2,
+.work-page h2,
+.case-study-container h2,
+.cv-page h2,
+.case-study h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Optional h3 (AI&UX uses this scale) */
+.home h3,
+.work-page h3,
+.case-study-container h3,
+.cv-page h3,
+.case-study h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Text rhythm */
+.home p,
+.work-page p,
+.case-study-container p,
+.cv-page p,
+.case-study p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+.home ul,
+.work-page ul,
+.case-study-container ul,
+.cv-page ul,
+.case-study ul {
+  padding-left: 1.25rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.home li,
+.work-page li,
+.case-study-container li,
+.cv-page li,
+.case-study li {
+  margin-bottom: 0.6rem;
+}
+
+/* Links: inherit text color and accessible focus */
+.home a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn),
+.work-page a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn),
+.case-study-container a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn),
+.cv-page a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn),
+.case-study a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):hover,
+.work-page a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):hover,
+.case-study-container a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):hover,
+.cv-page a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):hover,
+.case-study a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):hover { text-decoration: underline; }
+
+.home a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):focus-visible,
+.work-page a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):focus-visible,
+.case-study-container a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):focus-visible,
+.cv-page a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):focus-visible,
+.case-study a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.primary-btn):not(.secondary-btn):focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home,
+  .work-page,
+  .case-study-container,
+  .cv-page,
+  .case-study { padding: 3rem 1.25rem 5rem; }
+
+  .home h1,
+  .work-page h1,
+  .case-study-container h1,
+  .cv-page h1,
+  .case-study h1 { font-size: 1.9rem; }
+}
+
+/* =========================
+   Case Study header stickiness
+   ========================= */
+.case-header {
+  position: sticky;
+  top: calc(var(--navbar-height, 64px) + 12px); /* add small gap below navbar when sticky */
+  background: var(--bg-color);
+  border-bottom: 1px solid rgba(17,17,17,0.08);
+  padding-bottom: 0.5rem;
+  z-index: 850; /* below pager (900) but above content */
+}
+:root[data-theme='dark'] .case-header,
+[data-theme='dark'] .case-header { border-bottom-color: rgba(255,255,255,0.08); }
+
+/* Fill the space above the sticky header with background while scrolling */
+.case-header::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--navbar-height, 64px) + 12px);
+  background: var(--bg-color);
+  pointer-events: none;
+  z-index: 800; /* below header and navbar, above scrolled content */
+}
+:root[data-theme='dark'] .case-header,
+[data-theme='dark'] .case-header { border-bottom-color: rgba(255,255,255,0.08); }
+
+/* =========================
+   Home hero layout & typography
+   ========================= */
+.home .hero-header-row {
+  display: flex;
+  align-items: flex-start; /* align to top of text for balanced ratio */
+  gap: 0; /* switch to fixed margin on avatar for precise spacing */
+}
+
+.home .hero-photo {
+  /* Fixed requested size for hero avatar */
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* Crop focus to face by shifting the image inside the circle */
+  object-position: 50% 25%; /* center horizontally, slightly higher vertically */
+  margin-right: 1rem; /* slightly wider spacing to the right of the avatar */
+}
+
+/* Increase avatar spacing on larger screens for better balance */
+@media (min-width: 900px) {
+  .home .hero-photo { margin-right: 1.25rem; }
+  .hero-actions { gap: 1rem; }
+  .actions { gap: 1rem; }
+  .work-hero .btn-primary,
+  .work-hero .btn-secondary { margin-right: 1rem; }
+}
+
+/* Further spacing increase on very wide screens */
+@media (min-width: 1400px) {
+  .home .hero-photo { margin-right: 1.5rem; }
+  .hero-actions { gap: 1.25rem; }
+  .actions { gap: 1.25rem; }
+  .work-hero .btn-primary,
+  .work-hero .btn-secondary { margin-right: 1.25rem; }
+}
+
+.home .hero-header-text,
+.home .hero-subtitle,
+.home .hero-statement {
+  text-align: left;
+}
+
+.home .hero-subtitle { margin-top: 0.5rem; }
+.home .hero-statement { margin-top: 0.75rem; }
+
+/* Shared hero block for pages */
+.hero { margin-bottom: 2.5rem; }
+
+/* Actions: professional spacing and wrap for smaller screens */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* CTA icons row */
+.cta-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(17,17,17,0.06);
+  color: var(--text-color);
+  text-decoration: none;
+  border: 1px solid rgba(17,17,17,0.12);
+}
+.icon-link:hover { background: rgba(17,17,17,0.1); }
+.icon-link svg { display: block; }
+
+/* Inline link with right-arrow icon to indicate navigation */
+.inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+.inline-link svg { transition: transform 160ms ease; }
+.inline-link:hover svg { transform: translateX(2px); }
+
+/* Name: subtle metadata emphasis common in Danish portfolios */
+.home .hero-name {
+  font-weight: 600;
+  color: var(--muted-color);
+}
+
+/* Readable line-length for hero text */
+.home .hero-subtitle,
+.home .hero-statement { max-width: none; }
+
+/* Primary and secondary CTA buttons (replace removed Home.css) */
+.primary-btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  font-weight: 600;
+}
+.primary-btn:hover { opacity: 0.95; }
+
+.secondary-btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--secondary-cta-border);
+  font-weight: 500;
+}
+.secondary-btn:hover { background: var(--secondary-cta-hover); }
+
+/* Work page hero alignment to match Home */
+.work-hero { text-align: left; margin-bottom: 2rem; }
+
+/* Generic actions container for consistent spacing across sections */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Work hero button spacing (if buttons are present) */
+.work-hero .btn-primary,
+.work-hero .btn-secondary { margin-right: 0.75rem; }
+
+/* =========================
+   Case Study Pager (fixed arrows and current label)
+   ========================= */
+.case-pager {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%; /* vertically center in viewport */
+  transform: translateY(-50%);
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* left controls, status, right controls */
+  align-items: center;
+  /* Remove background to avoid covering content */
+  padding: 0;
+  pointer-events: none; /* container doesn't capture clicks */
+  z-index: 900;
+}
+.pager-arrow {
+  pointer-events: auto; /* enable clicks */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(17,17,17,0.06);
+  color: var(--text-color);
+  text-decoration: none;
+  border: 1px solid rgba(17,17,17,0.12);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.pager-arrow:hover { background: rgba(17,17,17,0.1); }
+.pager-left, .pager-right {
+  pointer-events: auto; /* allow click on child arrows */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.pager-left { justify-self: start; margin-left: 8px; }
+.pager-right { justify-self: end; margin-right: 8px; }
+.pager-inline-tip {
+  pointer-events: none; /* tip is non-interactive */
+  font-size: 0.8rem;
+  color: var(--muted-color);
+}
+.pager-current {
+  display: none; /* status removed from pager per request */
+}
+
+@media (max-width: 768px) {
+  .case-pager { top: 50%; transform: translateY(-50%); grid-template-columns: auto 1fr auto; }
+  .pager-arrow { width: 36px; height: 36px; font-size: 1.1rem; }
+  .pager-current { font-size: 0.85rem; }
+  .pager-inline-tip { font-size: 0.75rem; }
+}
+
+
+.case-study {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.case-header {
+  margin-bottom: 4rem;
+}
+
+.case-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+}
+
+.case-study section {
+  margin-bottom: 4rem;
+}
+
+.case-study h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.case-study p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.case-study ul {
+  padding-left: 1.25rem;
+}
+
+.case-study li {
+  margin-bottom: 0.6rem;
+}
+
+figure {
+  margin: 2rem 0;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: #4a4a4a;
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   CALLOUT: What I'd do differently
+========================= */
+
+.callout {
+  margin: 3rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #e0e0e0;
+}
+
+.callout h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.callout p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+
+/* =========================
+   Selected Work
+========================= */
+
+.selected-work {
+  max-width: 760px;
+  margin: 0 auto 6rem;
+  padding: 0 1.5rem;
+}
+
+.work-card {
+  margin-top: 2rem;
+}
+
+.work-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.work-card .meta {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+}
+
+.work-card ul {
+  padding-left: 1.25rem;
+  margin: 1rem 0;
+}
+
+.work-card li {
+  margin-bottom: 0.5rem;
+}
+
+.work-card .outcome {
+  margin-top: 1.25rem;
+}
+
+/* =========================
+   CTAs
+========================= */
+
+.cta-primary {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #111111;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.cta-primary:hover {
+  opacity: 0.9;
+}
+
+.cta-primary:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 3px;
+}
+
+.secondary-cta {
+  margin-top: 3rem;
+}
+
+.cta-secondary {
+  font-weight: 500;
+  color: #111111;
+  text-decoration: underline;
+}

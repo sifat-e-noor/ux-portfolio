@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "../styles/pageShared.css";
 import PdfViewer from '../components/PdfViewer';
 
 export default function CV() {
@@ -14,7 +15,7 @@ export default function CV() {
   }, [cvUrl]);
 
   return (
-    <main className="cv-page" style={{ padding: '1rem' }}>
+    <main className="cv-page">
       <h1>Curriculum Vitae</h1>
 
       <p>
@@ -29,7 +30,7 @@ export default function CV() {
 
       {exists === false && (
         <div style={{ color: '#b00', marginBottom: '1rem' }}>
-          <strong>CV not found.</strong> Place your file at <code>public/cv.pdf</code>
+          <strong>CV not found.</strong> Place your file at <code>public/Sifat-E-Noor_CV.pdf</code>
           &nbsp;so it can be displayed and downloaded.
         </div>
       )}

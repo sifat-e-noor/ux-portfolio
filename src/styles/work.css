@@ -1,5 +1,0 @@
-/* Minimal placeholder styles for work page */
-.work-page { padding: 0 1rem 1rem 1rem; }
-.work-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.work-card { border: 1px solid #eee; padding: 0.5rem; }
-.work-hero { margin-bottom: 1rem; }

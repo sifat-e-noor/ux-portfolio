@@ -27,6 +27,7 @@
 .about,
 .contact,
 .ai-ux-container,
+.aiux,
 .cv-page {
   width: 100%;
   box-sizing: border-box;
@@ -35,9 +36,11 @@
 /* Provide consistent section spacing used across pages */
 
 /* Consistent spacing for sections across pages */
-.page-container section,
-.page-container > div,
-.page-container > article {
+/* Apply vertical margins only to subsequent blocks, not the first child */
+.page-container > section:not(:first-child),
+.page-container > div:not(:first-child),
+.page-container > article:not(:first-child),
+.page-container > header:not(:first-child) {
   margin: 1.25rem 0;
 }
 

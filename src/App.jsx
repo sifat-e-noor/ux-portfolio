@@ -7,6 +7,9 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import AIAndUX from "./pages/AIAndUX.jsx";
 import CV from "./pages/CV.jsx";
+import UxUnite from "./pages/UxUnite.jsx";
+import SynesisConvay from "./pages/SynesisConvay.jsx";
+import AiReading from "./pages/AiReading.jsx";
 
 function App() {
   const rawBase = import.meta.env.BASE_URL ?? '/';
@@ -20,6 +23,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/work/:id" element={<Work />} />
         <Route path="/case-study" element={<CaseStudy />} />
+        {/* Dedicated case study pages */}
+        <Route path="/case-study/ux-unite" element={<UxUnite />} />
+        <Route path="/case-study/synesis-convay" element={<SynesisConvay />} />
+        <Route path="/case-study/ai-reading" element={<AiReading />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/ai-and-ux" element={<AIAndUX />} />

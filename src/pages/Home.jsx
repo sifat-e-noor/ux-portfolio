@@ -1,23 +1,23 @@
 import { Link } from "react-router-dom";
-import "../styles/Home.css";
+import "../styles/pageShared.css";
 import WorkPreview from "../components/WorkPreview";
 import { caseStudies } from "../data/caseStudies";
 
 
 export default function Home() {
   // Build downloadable CV URL from Vite base so it works in dev and on GH Pages
-  const cvUrl = `${import.meta.env.BASE_URL}cv.pdf`;
+  const cvUrl = `${import.meta.env.BASE_URL}Sifat-E-Noor_CV.pdf`;
 
   return (
     <main className="home" role="main">
 
-      
+
 
       {/* HERO */}
       <section className="hero" aria-labelledby="hero-heading">
         <header className="hero-header-row">
           <img
-            src={`${import.meta.env.BASE_URL}profile.jpg`}
+            src={`${import.meta.env.BASE_URL}profile_1.jpg`}
             alt="Sifat-E-Noor"
             className="hero-photo"
           />
@@ -40,18 +40,7 @@ export default function Home() {
           I focus on turning complexity into confident user action.
         </p>
 
-        <div
-          className="hero-actions"
-          role="navigation"
-          aria-label="Primary actions"
-        >
-          <Link to="/work" className="primary-btn">
-            View case studies
-          </Link>
-          <Link to="/ai-and-ux" className="secondary-btn">
-            AI & UX approach
-          </Link>
-        </div>
+        {/* Primary hero CTAs removed per request */}
       </section>
 
       {/* WHAT I DO */}
@@ -64,34 +53,58 @@ export default function Home() {
 
         <ul>
           <li>
-            <strong>UX Research & Problem Framing</strong> 
-              Defining the right problems through qualitative and quantitative research, and turning insights into clear product direction.
+            <strong>UX Research & Problem Framing: </strong>
+            Defining the right problems through qualitative and quantitative research, and turning insights into clear product direction.
           </li>
           <li>
-            <strong>UX & Product Design</strong> 
-              Designing interactions, information architecture, and scalable design systems for enterprise and AI-enabled products.
+            <strong>UX & Product Design: </strong>
+            Designing interactions, information architecture, and scalable design systems for enterprise and AI-enabled products.
           </li>
           <li>
-            <strong>Human-Centered AI Design</strong> 
-              Designing explainable, controllable, and supportive AI interactions that reduce cognitive load and build user trust.
+            <strong>Human-Centered AI Design: </strong>
+            Designing explainable, controllable, and supportive AI interactions that reduce cognitive load and build user trust.
           </li>
           <li>
-            <strong>Cross-Functional Collaboration</strong> 
-              Aligning design decisions with business goals and technical feasibility through close collaboration with stakeholders.
+            <strong>Cross-Functional Collaboration: </strong>
+            Aligning design decisions with business goals and technical feasibility through close collaboration with stakeholders.
           </li>
         </ul>
       </section>
 
-      {/* SELECTED WORK */}
-      <section className="selected-work" aria-labelledby="work-heading">
-        <h2 id="work-heading">Selected Work</h2>
+      <section className="selected-work" aria-labelledby="selected-work-heading">
+        <h2 id="selected-work-heading">Selected work</h2>
 
-        {/* injected component below */}
-        {caseStudies.map((work) => (
-            <WorkPreview key={work.id} {...work} />
-        ))}
+        <article className="work-card">
+          <h3>Designing a Scalable Virtual Collaboration Platform</h3>
+          <p className="meta">
+            Senior UX Designer / Team Lead · Synesis IT
+          </p>
 
+          <p>
+            I led the UX strategy and design of a virtual collaboration platform built
+            for enterprise and institutional use. The focus was on reliable meetings,
+            clear moderation, and scalable workflows—without unnecessary complexity.
+          </p>
+
+          <ul>
+            <li>Defined UX strategy and design direction</li>
+            <li>Led and mentored a team of six designers</li>
+            <li>Designed role-based controls and system states</li>
+            <li>Established a scalable design system</li>
+          </ul>
+
+          <p className="outcome">
+            <strong>Outcome:</strong> Improved usability and task efficiency, increased
+            enterprise adoption, and reduced interface-related support requests.
+          </p>
+
+          {/* PRIMARY CTA — placed after outcome */}
+          <a href="/case-studies/synesis-meet" className="primary-btn">
+            View Convay case study
+          </a>
+        </article>
       </section>
+
 
       {/* AI & UX */}
       <section className="ai-philosophy" aria-labelledby="ai-heading">
@@ -110,8 +123,11 @@ export default function Home() {
           I believe AI-enabled systems should help people make better decisions, not simply faster ones—and should always respect human judgment.
         </p>
 
-        <Link to="/ai-and-ux">
-          Read my AI & UX approach
+        <Link to="/ai-and-ux" className="inline-link" aria-label="Read my AI & UX approach">
+          <span>Read my AI & UX approach</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </Link>
       </section>
 
@@ -123,15 +139,29 @@ export default function Home() {
           Open to <strong>Senior UX Designer, Product Designer (UX-focused)</strong>, and <strong>UX Researcher</strong> roles in Denmark, particularly in teams working with AI-enabled or complex digital products.
         </p>
 
-        <div className="cta-actions" role="navigation" aria-label="Contact actions">
-          <Link className="primary-btn" to="/contact">
-            Get in touch
+        <div className="cta-icons" role="navigation" aria-label="Contact links">
+          {/* Get in touch */}
+          <Link to="/contact" className="icon-link" aria-label="Get in touch" title="Get in touch">
+            {/* Envelope icon */}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2l8 5 8-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </Link>
-          <Link className="secondary-btn" to="/cv">
-            View CV
-          </Link>
-          <a className="secondary-btn" href={cvUrl} download>
-            Download CV (PDF)
+
+          {/* Download CV */}
+          <a href={cvUrl} download className="icon-link" aria-label="Download CV (PDF)" title="Download CV (PDF)">
+            {/* Download icon */}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M12 3v10m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+
+          {/* LinkedIn */}
+          <a href="https://www.linkedin.com/in/sifat-e-noor" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="LinkedIn" title="LinkedIn">
+            {/* LinkedIn icon */}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M4.983 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.017-5zM4 9h2.5v12H4V9zm5 0h2.4v1.6h.034c.334-.63 1.152-1.296 2.374-1.296C16.613 9.304 18 10.573 18 13.067V21H15.5v-7.1c0-1.69-.6-2.545-1.874-2.545-1.02 0-1.624.688-1.89 1.352-.097.228-.121.546-.121.865V21H9V9z" />
+            </svg>
           </a>
         </div>
       </section>

@@ -18,8 +18,13 @@
 }
 .nav-link:not(.active):hover,
 .nav-link:not(.active):focus {
-  opacity: 0.9;
-  text-decoration: underline;
+	/* Match the active state styling on hover/focus */
+	background: none;
+	color: var(--text-color);
+	border-bottom: 2px solid var(--text-color);
+	padding-bottom: calc(0.35rem - 2px);
+	opacity: 0.95;
+	text-decoration: none;
 }
 
 /* Theme toggle button (placed after brand) */

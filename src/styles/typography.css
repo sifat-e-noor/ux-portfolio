@@ -7,6 +7,7 @@
   --muted-color: #4A4A4A; /* secondary metadata */
   --tertiary-color: #7A7A7A; /* disabled / tertiary */
   --max-width: 960px;
+  --content-max: 760px; /* unified inner content width across pages */
   --bg-color: #ffffff;
 }
 

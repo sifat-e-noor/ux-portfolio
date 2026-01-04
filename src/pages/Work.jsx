@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import '../styles/work.css';
+import "../styles/pageShared.css";
 import BackButton from '../components/BackButton';
 
 export default function Work() {
@@ -26,7 +26,7 @@ export default function Work() {
   ];
 
   return (
-    <div className="work-page">
+    <main className="work-page" role="main">
       <BackButton fallback="/" />
       <section className="work-hero">
         <h1>Mine Arbejder</h1>
@@ -58,6 +58,6 @@ export default function Work() {
                     <p>Route id: {id}</p>
             </div>
       </section>
-    </div>
+    </main>
   );
 }

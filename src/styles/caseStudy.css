@@ -1,7 +1,0 @@
-/* Minimal styles for case study page - placeholder */
-.case-study-container { padding: 0 1rem 1rem 1rem; }
-.case-studies-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.case-study-card { border: 1px solid #eee; padding: 0.5rem; cursor: pointer; }
-.card-image { height: 140px; background-size: cover; background-position: center; }
-.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; }
-.modal-content { background: #fff; padding: 1rem; max-width: 640px; width: 100%; }

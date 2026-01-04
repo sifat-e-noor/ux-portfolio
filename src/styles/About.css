@@ -3,9 +3,13 @@
 ========================= */
 
 .about {
-  max-width: 760px;
+  max-width: var(--content-max);
   margin: 0 auto;
   padding: 4rem 1.5rem 6rem;
+}
+
+@media (max-width: 768px) {
+  .about { padding: 3rem 1.25rem 5rem; }
 }
 
 /* =========================
