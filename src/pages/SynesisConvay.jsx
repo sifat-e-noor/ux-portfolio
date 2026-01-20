@@ -1,5 +1,6 @@
 import "../styles/pageShared.css";
 import CaseStudyPager from "../components/CaseStudyPager";
+import { Link } from "react-router-dom";
 
 export default function SynesisConvay() {
   return (
@@ -7,7 +8,7 @@ export default function SynesisConvay() {
 
       {/* HEADER */}
       <header className="case-header">
-          <a href={`${import.meta.env.BASE_URL}case-studies`} className="case-badge" aria-label="All Case Studies"><span aria-hidden>‹</span><span>All Case Studies</span></a>
+          <Link to="/case-studies" className="case-badge" aria-label="All Case Studies"><span aria-hidden>‹</span><span>All Case Studies</span></Link>
         <h1>Designing a Scalable Virtual Collaboration Platform</h1>
         <p className="meta">
           Senior UX Designer / Team Lead · Synesis IT

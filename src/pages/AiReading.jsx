@@ -1,5 +1,6 @@
 import "../styles/pageShared.css";
 import CaseStudyPager from "../components/CaseStudyPager";
+import { Link } from "react-router-dom";
 
 export default function AiReading() {
   return (
@@ -7,7 +8,7 @@ export default function AiReading() {
 
       {/* HEADER */}
       <header className="case-header">
-          <a href={`${import.meta.env.BASE_URL}case-studies`} className="case-badge" aria-label="All Case Studies"><span aria-hidden>‹</span><span>All Case Studies</span></a>
+          <Link to="/case-studies" className="case-badge" aria-label="All Case Studies"><span aria-hidden>‹</span><span>All Case Studies</span></Link>
         <h1>Evaluating Cognitive Load in AI-Generated Content</h1>
         <p className="meta">
           UX Researcher · Human-Centered AI · DTU
