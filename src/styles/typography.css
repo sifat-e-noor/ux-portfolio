@@ -7,16 +7,35 @@
   --muted-color: #4A4A4A; /* secondary metadata */
   --tertiary-color: #7A7A7A; /* disabled / tertiary */
   --max-width: 960px;
-  --content-max: 760px; /* unified inner content width across pages */
+  --content-max: 860px; /* unified inner content width across pages */
   --bg-color: #ffffff;
+
+  /* Fluid typography scale */
+  --fs-base: clamp(15px, 0.95rem + 0.25vw, 18px);
+  --fs-nav: clamp(0.95rem, 0.9rem + 0.20vw, 1.05rem);
+  --fs-h1: clamp(1.6rem, 1.25rem + 2.2vw, 2.4rem);
+  --fs-h2: clamp(1.25rem, 1.1rem + 1.3vw, 1.8rem);
+  --fs-h3: clamp(1.1rem, 1.0rem + 0.8vw, 1.4rem);
 }
 
 /* CTA and interaction colors */
 :root {
-  --cta-bg: #111111; /* primary CTA background (near-black) */
+  /* Light theme interaction palette */
+  --accent-color: #1F3A5F;            /* Accent / active */
+  --hover-color: #2F5D9F;             /* Hover (text & icon) */
+  --focus-outline-color: #1F3A5F;     /* Focus outline */
+
+  --cta-bg: #1F3A5F;                  /* Primary CTA bg */
+  --cta-hover: #2F5D9F;               /* Primary CTA hover bg */
   --cta-text: #ffffff;
+
   --secondary-cta-border: rgba(17,17,17,1);
   --secondary-cta-hover: rgba(0,0,0,0.04);
+
+  /* Icon link backgrounds (Home: Let's work together) */
+  --icon-bg: rgba(31,58,95,0.08);
+  --icon-border: rgba(31,58,95,0.16);
+  --icon-hover-bg: rgba(47,93,159,0.12);
 }
 
 html, body, #root {
@@ -26,20 +45,12 @@ html, body, #root {
 body {
   font-family: var(--body-font);
   color: var(--text-color);
-  font-size: 16px; /* base: 16px, acceptable to increase to 17-18 in media queries */
+  font-size: var(--fs-base);
   font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg-color, #ffffff);
-}
-
-/* Slightly larger body size on larger screens for better readability */
-@media (min-width: 900px) {
-  body { font-size: 17px; }
-}
-@media (min-width: 1400px) {
-  body { font-size: 18px; }
 }
 
 /* Secondary / metadata text */
@@ -53,20 +64,20 @@ body {
 
 /* Headings — clear hierarchy */
 h1 {
-  font-size: 2rem;
+  font-size: var(--fs-h1);
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-color);
   margin: 0 0 0.6rem;
 }
 h2 {
-  font-size: 1.375rem;
+  font-size: var(--fs-h2);
   font-weight: 600;
   line-height: 1.3;
   margin: 1.25rem 0 0.5rem;
 }
 h3 {
-  font-size: 1.125rem;
+  font-size: var(--fs-h3);
   font-weight: 600;
   line-height: 1.35;
   margin: 1rem 0 0.4rem;
@@ -76,7 +87,8 @@ p { margin: 0 0 1rem; }
 
 /* Links — inherit primary text color and use subtle underline on hover */
 a { color: inherit; text-decoration: none; }
-a:hover, a:focus { text-decoration: underline; }
+a:hover:not(.inline-link) { text-decoration: none; }
+a:focus:not(.inline-link):not(.pager-link):not(.nav-link) { text-decoration: none; }
 
 /* Button / CTA primitives */
 .btn {
@@ -98,7 +110,7 @@ a:hover, a:focus { text-decoration: underline; }
   color: var(--cta-text);
   font-weight: 600;
 }
-.btn-primary:hover { opacity: 0.95; }
+.btn-primary:hover { background: var(--cta-hover); }
 
 .btn-secondary {
   background: transparent;
@@ -117,10 +129,23 @@ a:hover, a:focus { text-decoration: underline; }
   --text-color: #f5f5f5;
   --muted-color: #c4c4c4;
   --tertiary-color: #9a9a9a;
-  --cta-bg: #f5f5f5;
+
+  /* Dark theme interaction palette */
+  --accent-color: #7FA6D9;            /* Accent / active */
+  --hover-color: #A3BEE8;             /* Hover (text & icon) */
+  --focus-outline-color: #7FA6D9;     /* Focus outline */
+
+  --cta-bg: #7FA6D9;                  /* Primary CTA bg */
+  --cta-hover: #A3BEE8;               /* Primary CTA hover bg */
   --cta-text: #0b1220;
+
   --secondary-cta-border: rgba(245,245,245,0.12);
   --secondary-cta-hover: rgba(255,255,255,0.04);
+
+  /* Icon link backgrounds (Home: Let's work together) */
+  --icon-bg: rgba(127,166,217,0.12);
+  --icon-border: rgba(127,166,217,0.25);
+  --icon-hover-bg: rgba(163,190,232,0.20);
 }
 
 /* Ensure site nav brand uses bold weight set earlier in navBar.css */

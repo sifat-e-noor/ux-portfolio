@@ -4,15 +4,16 @@ import CaseStudyPager from "../components/CaseStudyPager";
 export default function SynesisConvay() {
   return (
     <main className="case-study" role="main">
-      <CaseStudyPager current="synesis-convay" />
 
       {/* HEADER */}
       <header className="case-header">
+          <a href={`${import.meta.env.BASE_URL}case-studies`} className="case-badge" aria-label="All Case Studies"><span aria-hidden>‹</span><span>All Case Studies</span></a>
         <h1>Designing a Scalable Virtual Collaboration Platform</h1>
         <p className="meta">
           Senior UX Designer / Team Lead · Synesis IT
         </p>
         <p className="meta">Viewing: Case Study 2 — Conversational AI for enterprise workflows.</p>
+        <CaseStudyPager current="synesis-convay" />
       </header>
 
       {/* CONTEXT */}

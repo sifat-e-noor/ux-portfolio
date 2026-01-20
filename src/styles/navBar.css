@@ -5,26 +5,34 @@
 .brand-link { font-weight: 800; color: var(--text-color); text-decoration: none; font-size: 1rem; }
 .brand-sep { color: var(--muted-color); margin-left: 0.5rem; margin-right: 0.75rem; }
 .site-links { display:flex; gap: 0.75rem; align-items:center; margin-left: auto; }
-.nav-link { padding: 0.35rem 0.5rem; border-radius: 4px; text-decoration: none; color: var(--text-color); font-weight: 500; }
+.nav-link { padding: 0.35rem 0.5rem; border-radius: 4px; text-decoration: none; color: var(--text-color); font-weight: 500; font-size: var(--fs-nav); }
 .nav-link:hover, .nav-link:focus, .nav-link.active:hover, .nav-link.active:focus {
 	opacity: 0.9;
 	text-decoration: none;
 }
+.nav-link:focus-visible, .nav-link.active:focus-visible { text-decoration: none; }
 .nav-link.active {
 	background: none;
-	color: var(--text-color);
-	border-bottom: 2px solid var(--text-color);
+	color: var(--accent-color);
+	border-bottom: 2px solid var(--accent-color);
 	padding-bottom: calc(0.35rem - 2px);
+	cursor: default; /* don't show hand on active tab */
 }
 .nav-link:not(.active):hover,
 .nav-link:not(.active):focus {
-	/* Match the active state styling on hover/focus */
+	/* Accent on hover/focus */
 	background: none;
-	color: var(--text-color);
-	border-bottom: 2px solid var(--text-color);
+	color: var(--hover-color);
+	border-bottom: 2px solid var(--hover-color);
 	padding-bottom: calc(0.35rem - 2px);
 	opacity: 0.95;
 	text-decoration: none;
+}
+
+/* Ensure active tab never shows hand cursor on hover/focus */
+.nav-link.active:hover,
+.nav-link.active:focus {
+	cursor: default;
 }
 
 /* Theme toggle button (placed after brand) */
@@ -41,7 +49,7 @@
 	margin-left: 6px;
 }
 .theme-toggle:hover { background: rgba(0,0,0,0.03); }
-.theme-toggle:focus { outline: none; box-shadow: 0 0 0 3px rgba(17,17,17,0.08); }
+.theme-toggle:focus { outline: none; box-shadow: 0 0 0 3px var(--focus-outline-color); }
 .theme-icon {
 	width: 18px;
 	height: 18px;
@@ -86,3 +94,33 @@
 
 
 /* page-container moved to layout.css to centralize spacing rules */
+/* Hide hamburger by default; show via media query on small screens */
+.menu-toggle { display: none; }
+
+/* ========================
+	 Responsive adjustments
+======================== */
+@media (max-width: 640px) {
+	.site-nav-inner { padding: 0.5rem 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+	.site-brand { flex: 1; }
+	.brand-icon { width:24px; height:24px; }
+	.brand-sep { display: none; }
+	.site-links { width: 100%; margin-left: 0; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+	.nav-link { padding: 0.3rem 0.4rem; }
+}
+
+@media (max-width: 380px) {
+	.site-links { justify-content: flex-start; gap: 0.4rem; }
+}
+
+@media (max-width: 640px) {
+	.menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid transparent; border-radius: 6px; background: transparent; cursor: pointer; color: var(--text-color); margin-left: auto; }
+	.menu-toggle:hover { background: rgba(0,0,0,0.03); }
+	.menu-toggle:focus { outline: none; box-shadow: 0 0 0 3px var(--focus-outline-color); }
+
+	/* Collapse links by default on small screens */
+	.site-links { display: none; width: 100%; margin-left: 0; }
+	.site-links.open { display: flex; flex-direction: column; gap: 0.25rem; padding: 0.25rem 0; align-items: flex-start; }
+	.nav-link { padding: 0.5rem 0.25rem; width: 100%; border-bottom: 1px solid var(--secondary-cta-border); }
+	.nav-link.active { border-bottom-color: var(--accent-color); }
+}

@@ -99,7 +99,7 @@ export default function Home() {
           </p>
 
           {/* PRIMARY CTA — placed after outcome */}
-          <a href="/case-studies/synesis-meet" className="primary-btn">
+          <a href="/case-studies/synesis-convay" className="primary-btn">
             View Convay case study
           </a>
         </article>
@@ -123,9 +123,9 @@ export default function Home() {
           I believe AI-enabled systems should help people make better decisions, not simply faster ones—and should always respect human judgment.
         </p>
 
-        <Link to="/ai-and-ux" className="inline-link" aria-label="Read my AI & UX approach">
+        <Link to="/ai-and-ux" className="case-link" aria-label="Read my AI & UX approach">
           <span>Read my AI & UX approach</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </Link>

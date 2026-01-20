@@ -1,18 +1,20 @@
 import "../styles/pageShared.css";
 import CaseStudyPager from "../components/CaseStudyPager";
+import { Link } from "react-router-dom";
 
 export default function UxUnite() {
   return (
     <main className="case-study" role="main">
-      <CaseStudyPager current="ux-unite" />
 
       {/* HEADER */}
       <header className="case-header">
+          <Link to="/case-studies" className="case-badge" aria-label="All Case Studies"><span aria-hidden>‹</span><span>All Case Studies</span></Link>
         <h1>Supporting Confident Decision-Making in a Data-Driven Product</h1>
         <p className="meta">
           Product Designer(UX) · UX Unite · Denmark
         </p>
         <p className="meta">Viewing: Case Study 1 — Community-driven UX collaboration platform.</p>
+        <CaseStudyPager current="ux-unite" />
       </header>
 
       {/* CONTEXT */}

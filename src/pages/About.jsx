@@ -122,6 +122,41 @@ export default function About() {
           creative projects. These activities help me stay observant,
           grounded, and reflective in my design practice.
         </p>
+
+        {/* Album: four images from public in a simple grid */}
+        <div className="album-grid" aria-label="Personal photo album">
+          <figure className="album-item">
+            <img
+              src={`${import.meta.env.BASE_URL}Hiking.jpg`}
+              alt="Hiking"
+              className="album-img"
+            />
+          </figure>
+
+          <figure className="album-item">
+            <img
+              src={`${import.meta.env.BASE_URL}Norway.jpg`}
+              alt="Norway landscape"
+              className="album-img"
+            />
+          </figure>
+
+          <figure className="album-item">
+            <img
+              src={`${import.meta.env.BASE_URL}lamp.jpg`}
+              alt="Lamp detail"
+              className="album-img"
+            />
+          </figure>
+
+          <figure className="album-item">
+            <img
+              src={`${import.meta.env.BASE_URL}Sketchs.jpg`}
+              alt="Sketches"
+              className="album-img"
+            />
+          </figure>
+        </div>
       </section>
 
       {/* VALUE */}

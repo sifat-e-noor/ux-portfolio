@@ -4,15 +4,16 @@ import CaseStudyPager from "../components/CaseStudyPager";
 export default function AiReading() {
   return (
     <main className="case-study" role="main">
-      <CaseStudyPager current="ai-reading" />
 
       {/* HEADER */}
       <header className="case-header">
+          <a href={`${import.meta.env.BASE_URL}case-studies`} className="case-badge" aria-label="All Case Studies"><span aria-hidden>‹</span><span>All Case Studies</span></a>
         <h1>Evaluating Cognitive Load in AI-Generated Content</h1>
         <p className="meta">
           UX Researcher · Human-Centered AI · DTU
         </p>
         <p className="meta">Viewing: Case Study 3 — Assistive reading tools powered by AI.</p>
+        <CaseStudyPager current="ai-reading" />
       </header>
 
       {/* CONTEXT */}

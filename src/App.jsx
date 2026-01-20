@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-route
 import NavBar from './components/NavBar';
 import Home from "./pages/Home.jsx";
 import Work from "./pages/Work.jsx";
-import CaseStudy from "./pages/CaseStudy.jsx";
+import CaseStudies from "./pages/CaseStudies.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import AIAndUX from "./pages/AIAndUX.jsx";
@@ -22,11 +22,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work/:id" element={<Work />} />
-        <Route path="/case-study" element={<CaseStudy />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
         {/* Dedicated case study pages */}
-        <Route path="/case-study/ux-unite" element={<UxUnite />} />
-        <Route path="/case-study/synesis-convay" element={<SynesisConvay />} />
-        <Route path="/case-study/ai-reading" element={<AiReading />} />
+        <Route path="/case-studies/ux-unite" element={<UxUnite />} />
+        <Route path="/case-studies/synesis-convay" element={<SynesisConvay />} />
+        <Route path="/case-studies/ai-reading" element={<AiReading />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/ai-and-ux" element={<AIAndUX />} />
