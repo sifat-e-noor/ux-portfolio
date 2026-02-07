@@ -121,6 +121,27 @@
 :root[data-theme='dark'] .case-header,
 [data-theme='dark'] .case-header { border-bottom-color: rgba(255,255,255,0.08); }
 
+/* Compact mode: show only badge, viewing status, and pager */
+.case-header.compact h1 { display: none; }
+.case-header.compact .meta { display: none; }
+.case-header.compact .meta.viewing-status { display: block; }
+.case-header.compact { padding-bottom: 0.25rem; }
+
+/* Two-line compact layout: first line badge + pager, second line status */
+.case-header.compact {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "badge"
+    "status"
+    "pager";
+  align-items: center;
+  row-gap: 4px;
+}
+.case-header.compact .case-badge { grid-area: badge; white-space: nowrap; }
+.case-header.compact .meta.viewing-status { grid-area: status; margin-top: 0; }
+.case-header.compact .case-pager { grid-area: pager; justify-self: start; }
+
 /* Fill the space above the sticky header with background while scrolling */
 .case-header::before {
   content: "";
@@ -135,6 +156,9 @@
 }
 :root[data-theme='dark'] .case-header,
 [data-theme='dark'] .case-header { border-bottom-color: rgba(255,255,255,0.08); }
+
+/* Sentinel to detect scroll past header start */
+.header-sentinel { height: 1px; }
 
 /* =========================
    Home hero layout & typography

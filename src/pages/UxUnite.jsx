@@ -1,8 +1,20 @@
 import "../styles/pageShared.css";
 import CaseStudyPager from "../components/CaseStudyPager";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function UxUnite() {
+  useEffect(() => {
+    const header = document.querySelector('.case-header');
+    const sentinel = document.querySelector('.header-sentinel');
+    if (!header || !sentinel) return;
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      header.classList.toggle('compact', !entry.isIntersecting);
+    }, { threshold: 0 });
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
   return (
     <main className="case-study" role="main">
 
@@ -13,9 +25,11 @@ export default function UxUnite() {
         <p className="meta">
           Product Designer(UX) · UX Unite · Denmark
         </p>
-        <p className="meta">Viewing: Case Study 1 — Community-driven UX collaboration platform.</p>
+        <p className="meta viewing-status">Viewing: Case Study 1 — Community-driven UX collaboration platform.</p>
         <CaseStudyPager current="ux-unite" />
       </header>
+
+      <div className="header-sentinel" aria-hidden="true"></div>
 
       {/* CONTEXT */}
       <section>
@@ -79,7 +93,7 @@ export default function UxUnite() {
 
         <figure>
           <img
-            src="/images/uxunite-flow.png"
+            src={`${import.meta.env.BASE_URL}images/uxunite-flow.png`}
             alt="User flow showing structured decision-making steps"
           />
           <figcaption>
@@ -89,7 +103,7 @@ export default function UxUnite() {
 
         <figure>
           <img
-            src="/images/uxunite-ui.png"
+            src={`${import.meta.env.BASE_URL}images/uxunite-ui.png`}
             alt="High-fidelity UI showing comparison-based data presentation"
           />
           <figcaption>

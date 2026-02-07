@@ -2,6 +2,7 @@ import React from 'react';
 import "../styles/pageShared.css";
 import BackButton from '../components/BackButton';
 import { Link, useNavigate } from 'react-router-dom';
+import dashboard from "../assets/convay-dashboard.png";
 
 export default function CaseStudies() {
   const navigate = useNavigate();
@@ -30,6 +31,15 @@ export default function CaseStudies() {
           onClick={() => navigate('/case-studies/synesis-convay')}
           onKeyDown={(e) => onKeyNav(e, '/case-studies/synesis-convay')}
         >
+          <figure>
+            <img
+              src={dashboard}
+              alt="Host dashboard thumbnail showing consolidated meeting controls"
+            />
+            <figcaption>
+              Enterprise collaboration platform · UX strategy & system design
+            </figcaption>
+          </figure>
           <h2>Designing a Scalable Virtual Collaboration Platform</h2>
           <p className="meta">Senior UX Designer / Team Lead · Synesis IT</p>
           <p>

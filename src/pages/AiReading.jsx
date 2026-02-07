@@ -1,8 +1,20 @@
 import "../styles/pageShared.css";
 import CaseStudyPager from "../components/CaseStudyPager";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function AiReading() {
+  useEffect(() => {
+    const header = document.querySelector('.case-header');
+    const sentinel = document.querySelector('.header-sentinel');
+    if (!header || !sentinel) return;
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      header.classList.toggle('compact', !entry.isIntersecting);
+    }, { threshold: 0 });
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
   return (
     <main className="case-study" role="main">
 
@@ -13,9 +25,11 @@ export default function AiReading() {
         <p className="meta">
           UX Researcher · Human-Centered AI · DTU
         </p>
-        <p className="meta">Viewing: Case Study 3 — Assistive reading tools powered by AI.</p>
+        <p className="meta viewing-status">Viewing: Case Study 3 — Assistive reading tools powered by AI.</p>
         <CaseStudyPager current="ai-reading" />
       </header>
+
+      <div className="header-sentinel" aria-hidden="true"></div>
 
       {/* CONTEXT */}
       <section>
@@ -72,7 +86,7 @@ export default function AiReading() {
 
         <figure>
           <img
-            src="/images/ai-reading-setup.png"
+            src={`${import.meta.env.BASE_URL}images/ai-reading-setup.png`}
             alt="Eye-tracking experiment setup"
           />
           <figcaption>
@@ -82,7 +96,7 @@ export default function AiReading() {
 
         <figure>
           <img
-            src="/images/ai-reading-results.png"
+            src={`${import.meta.env.BASE_URL}images/ai-reading-results.png`}
             alt="Visualisation of eye-tracking metrics"
           />
           <figcaption>
