@@ -2,7 +2,10 @@ import React from 'react';
 import "../styles/pageShared.css";
 import BackButton from '../components/BackButton';
 import { Link, useNavigate } from 'react-router-dom';
-import dashboard from "../assets/convay-dashboard.png";
+import convayDashboard from "../assets/convay-dashboard.png";
+import convayLogo from "../assets/convay-logo.png";
+import uxuniteLogo from "../assets/UxUnite-logo.png";
+import readsenseLogo from "../assets/Adjustable-Reading-Settings.png";
 
 export default function CaseStudies() {
   const navigate = useNavigate();
@@ -33,24 +36,20 @@ export default function CaseStudies() {
         >
           <figure>
             <img
-              src={dashboard}
-              alt="Host dashboard thumbnail showing consolidated meeting controls"
+              src={convayDashboard}
+              alt="Synesis Convay dashboard"
             />
-            <figcaption>
-              Enterprise collaboration platform · UX strategy & system design
-            </figcaption>
           </figure>
           <h2>Designing a Scalable Virtual Collaboration Platform</h2>
-          <p className="meta">Senior UX Designer / Team Lead · Synesis IT</p>
+          <p className="meta">Senior UX Designer · Synesis IT</p>
           <p>
-            Led UX strategy and design for an enterprise collaboration platform,
-            focusing on clarity, reliability, and long-term scalability.
+            Led end-to-end UX strategy and system design for an enterprise virtual collaboration platform, simplifying complex scheduling and live meeting workflows at scale.
           </p>
           <p className="focus"><strong>Focus</strong></p> 
           <ul>
             <li>UX strategy and leadership</li>
-            <li>Enterprise usability</li>
-            <li>Design systems</li>
+            <li>Enterprise workflow design</li>
+            <li>Scalable interaction systems</li>
           </ul>
             <Link to="/case-studies/synesis-convay" className="case-link" onClick={(e) => e.stopPropagation()}>
             Read more
@@ -67,17 +66,22 @@ export default function CaseStudies() {
           onClick={() => navigate('/case-studies/ux-unite')}
           onKeyDown={(e) => onKeyNav(e, '/case-studies/ux-unite')}
         >
-          <h2>Supporting Confident Decision-Making in a Data-Driven Product</h2>
-          <p className="meta">Senior Product Designer · UX Unite</p>
+          <figure>
+            <img
+              src={uxuniteLogo}
+              alt="UX Unite logo"
+            />
+          </figure>
+          <h2>Designing Hiring Transparency Through Company Insights</h2>
+          <p className="meta">Product Designer (UX) · UX Unite</p>
           <p>
-            Owned UX research and interaction design for a data-driven product
-            supporting user decision-making.
+            Researched and defined a hiring history feature that surfaces meaningful job post patterns, helping candidates evaluate companies with greater clarity and trust.
           </p>
           <p className="focus"><strong>Focus</strong></p> 
           <ul>
-            <li>Research-driven design</li>
-            <li>Information architecture</li>
-            <li>Data-heavy interfaces</li>
+            <li>Research-driven product decisions & co-design</li>
+            <li>Data Synthesis, Scoping & MVP</li>
+            <li>Information architecture & Data-heavy interfaces</li>
           </ul>
             <Link to="/case-studies/ux-unite" className="case-link" onClick={(e) => e.stopPropagation()}>
             Read more
@@ -94,17 +98,22 @@ export default function CaseStudies() {
           onClick={() => navigate('/case-studies/ai-reading')}
           onKeyDown={(e) => onKeyNav(e, '/case-studies/ai-reading')}
         >
-          <h2>Evaluating Cognitive Load in AI-Generated Content</h2>
-          <p className="meta">UX Researcher · Human-Centered AI (DTU)</p>
+          <figure>
+            <img
+              src={readsenseLogo}
+              alt="ReadSense logo"
+            />
+          </figure>
+          <h2>Designing a Research Tool for Real-World Reading Behaviour</h2>
+          <p className="meta">UX Researcher, UX Designer & Developer · Human-Centered AI (DTU)</p>
           <p>
-            Experimental research on how users process AI-generated versus
-            human-authored content, with implications for product design.
+            Designed and developed a research application capturing authentic reading behaviour and preferences in real environments while preserving natural reading experiences.
           </p>
           <p className="focus"><strong>Focus</strong></p> 
           <ul>
-            <li>UX research</li>
-            <li>Cognitive load and trust</li>
-            <li>Human-centered AI</li>
+            <li>Experimental UX research</li>
+            <li>Behavioural data capture</li>
+            <li>Ethical interaction design</li>
           </ul>
             <Link to="/case-studies/ai-reading" className="case-link" onClick={(e) => e.stopPropagation()}>
             Read more

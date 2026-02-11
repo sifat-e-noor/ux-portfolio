@@ -28,7 +28,7 @@ export default function SynesisConvay() {
         <Link to="/case-studies" className="case-badge" aria-label="All Case Studies"><span aria-hidden>‹</span><span>All Case Studies</span></Link>
         <h1>Designing a Scalable Virtual Collaboration Platform</h1>
         <p className="meta">
-          Senior UX Designer / Team Lead · Synesis IT
+          Senior UX Designer · Synesis IT
         </p>
         <p className="meta viewing-status">Viewing: Case Study 2 — Conversational AI for enterprise workflows.</p>
         <CaseStudyPager current="synesis-convay" />
@@ -168,6 +168,16 @@ export default function SynesisConvay() {
         <p>
           I would validate live-meeting state visibility earlier using rapid
           prototypes with end users to reduce later iteration cycles.
+        </p>
+      </section>
+
+      {/* REFLECTION */}
+      <section>
+        <h2>Reflection</h2>
+        <p>
+          Designing for research does not require sacrificing user experience when ethical clarity and interaction
+          restraint are prioritised.g AI-enabled systems that
+          respect human cognition and decision-making.
         </p>
       </section>
 

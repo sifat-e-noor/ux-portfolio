@@ -121,26 +121,49 @@
 :root[data-theme='dark'] .case-header,
 [data-theme='dark'] .case-header { border-bottom-color: rgba(255,255,255,0.08); }
 
+/* Hide viewing status in normal (non-compact) state */
+.case-header .meta.viewing-status { display: none; }
+
 /* Compact mode: show only badge, viewing status, and pager */
 .case-header.compact h1 { display: none; }
 .case-header.compact .meta { display: none; }
-.case-header.compact .meta.viewing-status { display: block; }
-.case-header.compact { padding-bottom: 0.25rem; }
-
-/* Two-line compact layout: first line badge + pager, second line status */
-.case-header.compact {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "badge"
-    "status"
-    "pager";
-  align-items: center;
-  row-gap: 4px;
+.case-header.compact .meta.viewing-status { 
+  display: inline;
+  margin: 0; /* remove all paragraph margins */
+  padding: 0; /* remove padding */
 }
-.case-header.compact .case-badge { grid-area: badge; white-space: nowrap; }
-.case-header.compact .meta.viewing-status { grid-area: status; margin-top: 0; }
-.case-header.compact .case-pager { grid-area: pager; justify-self: start; }
+.case-header.compact { 
+  padding-bottom: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline; /* use baseline for text alignment */
+  gap: 0.75rem;
+  row-gap: 8px;
+}
+.case-header.compact .case-badge { 
+  white-space: nowrap;
+  margin-bottom: 0; /* override default margin-bottom in compact mode */
+  padding: 0 0.25rem; /* reduce padding for better alignment */
+  border-radius: 4px; /* square off in compact mode */
+}
+.case-header.compact .case-badge::after { 
+  content: " |"; 
+  margin-left: 0.75rem;
+}
+.case-header.compact .case-badge:hover {
+  background: transparent; /* remove hover background in compact mode */
+  border-radius: 4px; /* keep square */
+}
+.case-header.compact .meta.viewing-status { 
+  flex: 1;
+  min-width: fit-content;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.case-header.compact .case-pager { 
+  flex-basis: 100%;
+  width: auto;
+}
 
 /* Fill the space above the sticky header with background while scrolling */
 .case-header::before {
@@ -601,6 +624,24 @@ figure {
 }
 
 figure img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* Uniform thumbnail size for case card images */
+.case-card figure {
+  margin: 0 0 1.5rem 0;
+  height: 200px;
+}
+
+.case-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+figure.video-figure video {
   width: 100%;
   border-radius: 4px;
 }

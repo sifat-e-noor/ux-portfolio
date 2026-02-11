@@ -77,21 +77,13 @@ export default function Home() {
         <article className="work-card">
           <h3>Designing a Scalable Virtual Collaboration Platform</h3>
           <p className="meta">
-            Senior UX Designer / Team Lead · Synesis IT
+            Senior UX Designer · Synesis IT
           </p>
 
           <p>
-            I led the UX strategy and design of a virtual collaboration platform built
-            for enterprise and institutional use. The focus was on reliable meetings,
-            clear moderation, and scalable workflows—without unnecessary complexity.
+            Led UX strategy and system design for an enterprise virtual collaboration platform, simplifying complex scheduling and live meeting workflows across institutional environments.
           </p>
-
-          <ul>
-            <li>Defined UX strategy and design direction</li>
-            <li>Led and mentored a team of six designers</li>
-            <li>Designed role-based controls and system states</li>
-            <li>Established a scalable design system</li>
-          </ul>
+          <p>I directed a team of six designers, defined role-based interaction models, and established a scalable design system supporting long-term product growth.</p>
 
           <p className="outcome">
             <strong>Outcome:</strong> Improved usability and task efficiency, increased
@@ -100,7 +92,7 @@ export default function Home() {
 
           {/* PRIMARY CTA — placed after outcome */}
           <a href="/case-studies/synesis-convay" className="primary-btn">
-            View Convay case study
+            Explore the full case study
           </a>
         </article>
       </section>
