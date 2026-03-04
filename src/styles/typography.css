@@ -11,7 +11,7 @@
   --bg-color: #ffffff;
 
   /* Fluid typography scale */
-  --fs-base: clamp(15px, 0.95rem + 0.25vw, 18px);
+  --fs-base: clamp(15px, 0.95rem + 0.25vw, 16px);
   --fs-nav: clamp(0.95rem, 0.9rem + 0.20vw, 1.05rem);
   --fs-h1: clamp(1.6rem, 1.25rem + 2.2vw, 2.4rem);
   --fs-h2: clamp(1.25rem, 1.1rem + 1.3vw, 1.8rem);

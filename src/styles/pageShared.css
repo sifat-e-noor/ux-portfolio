@@ -61,7 +61,7 @@
 .case-study-container p,
 .cv-page p,
 .case-study p {
-  font-size: 1rem;
+  font-size: 0.85rem;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -81,7 +81,7 @@
 .case-study-container li,
 .cv-page li,
 .case-study li {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
 }
 
 /* Link styles are handled by global typography.css; removing page-level overrides */
@@ -121,41 +121,46 @@
 :root[data-theme='dark'] .case-header,
 [data-theme='dark'] .case-header { border-bottom-color: rgba(255,255,255,0.08); }
 
-/* Hide viewing status in normal (non-compact) state */
-.case-header .meta.viewing-status { display: none; }
+/* Show viewing status in normal (non-compact) state */
+.case-header .meta.viewing-status { display: block; }
 
-/* Compact mode: show only badge, viewing status, and pager */
+/* Compact mode: hide intro and other meta (except those in header-top) */
 .case-header.compact h1 { display: none; }
-.case-header.compact .meta { display: none; }
-.case-header.compact .meta.viewing-status { 
-  display: inline;
-  margin: 0; /* remove all paragraph margins */
-  padding: 0; /* remove padding */
-}
+.case-header.compact .meta:not(.viewing-status) { display: none; }
+.case-header.compact > .meta { display: none; }
+/* Hide the short case intro once the header becomes compact (on scroll) */
+.case-header.compact .case-intro { display: none; }
 .case-header.compact { 
+  padding-top: 1rem;
   padding-bottom: 0.25rem;
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline; /* use baseline for text alignment */
+  align-items: center; /* keep badge and status vertically aligned */
   gap: 0.75rem;
   row-gap: 8px;
 }
 .case-header.compact .case-badge { 
   white-space: nowrap;
-  margin-bottom: 0; /* override default margin-bottom in compact mode */
-  padding: 0 0.25rem; /* reduce padding for better alignment */
-  border-radius: 4px; /* square off in compact mode */
+  margin-bottom: 0;
+  padding: 0 0.25rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
 }
 .case-header.compact .case-badge::after { 
   content: " |"; 
   margin-left: 0.75rem;
 }
 .case-header.compact .case-badge:hover {
-  background: transparent; /* remove hover background in compact mode */
-  border-radius: 4px; /* keep square */
+  background: transparent;
+  border-radius: 4px;
 }
 .case-header.compact .meta.viewing-status { 
-  flex: 1;
+  display: inline;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex: none;
   min-width: fit-content;
   font-size: 1rem;
   line-height: 1.4;
@@ -163,6 +168,76 @@
 .case-header.compact .case-pager { 
   flex-basis: 100%;
   width: auto;
+}
+
+/* Ensure viewing status sits between badge and pager when compact (match UxUnite) */
+.case-header.compact .case-badge { order: 1; }
+.case-header.compact .meta.viewing-status { order: 2; }
+.case-header.compact .case-pager { order: 3; }
+.case-header .header-top { display: flex; align-items: center; gap: 0.5rem; }
+.case-header.compact .header-top { order: 1; }
+
+/* Metrics & Testimonial Grid: 1/3 - 2/3 split with card styling */
+.metrics-testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.metrics-card,
+.testimonial-card {
+  background: rgba(17,17,17,0.02);
+  border: 1px solid rgba(17,17,17,0.06);
+  padding: 1rem;
+  border-radius: 8px;
+}
+:root[data-theme='dark'] .metrics-card,
+:root[data-theme='dark'] .testimonial-card,
+[data-theme='dark'] .metrics-card,
+[data-theme='dark'] .testimonial-card {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.04);
+}
+.metrics-card h3,
+.testimonial-card h3 { margin: 0 0 0.75rem 0; font-size: 1rem; font-weight: 600; }
+.metrics-card ul { margin: 0; padding-left: 1.1rem; color: var(--muted-color); }
+.metrics-card li { margin-bottom: 0.6rem; }
+.testimonial-card blockquote {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+.testimonial-card cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-style: normal;
+  color: var(--muted-color);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .metrics-testimonial-grid { grid-template-columns: 1fr; }
+}
+
+/* Slideshow for Convay feedback images */
+.slideshow { margin: 1.5rem 0; }
+.slideshow .slides { position: relative; height: auto; display: flex; align-items: center; justify-content: center; }
+.slideshow .slides img { display: none; max-width: 100%; height: auto; border-radius: 6px; cursor: pointer; }
+.slideshow .slides img.active { display: block; }
+.slideshow .dots { display: flex; gap: 0.5rem; justify-content: center; margin-top: 0.75rem; }
+.slideshow .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(17,17,17,0.12); border: none; padding: 0; cursor: pointer; }
+.slideshow .dot.active { background: var(--accent-color); }
+.slideshow .dot:focus { outline: none; box-shadow: 0 0 0 3px var(--focus-outline-color); }
+
+/* Generic image caption (gcaption) used under feedback images */
+.gcaption {
+  font-size: 0.85rem !important;
+  color: var(--muted-color);
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
 /* Fill the space above the sticky header with background while scrolling */
@@ -256,6 +331,19 @@
 
 /* Shared hero block for pages */
 .hero { margin-bottom: 2.5rem; }
+
+/* Case study hero: center the primary hero image and keep responsive sizing */
+.case-hero {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.case-hero img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
 
 /* Actions: professional spacing and wrap for smaller screens */
 .hero-actions {
@@ -580,9 +668,9 @@
   padding: 4rem 1.5rem 6rem;
 }
 
-.case-header {
+/* .case-header {
   margin-bottom: 4rem;
-}
+} */
 
 .case-header h1 {
   font-size: 2.2rem;
@@ -616,7 +704,7 @@
 }
 
 .case-study li {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
 }
 
 figure {
@@ -632,12 +720,18 @@ figure img {
 .case-card figure {
   margin: 0 0 1.5rem 0;
   height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 4px;
 }
 
 .case-card figure img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 1rem;
   border-radius: 4px;
 }
 
@@ -650,6 +744,7 @@ figcaption {
   font-size: 0.85rem;
   color: var(--muted-color);
   margin-top: 0.5rem;
+  text-align: center;
 }
 
 /* =========================
@@ -657,7 +752,7 @@ figcaption {
 ========================= */
 
 .callout {
-  margin: 3rem 0;
+  margin: 1rem 0;
   padding-left: 1rem;
   border-left: 3px solid #e0e0e0;
 }
@@ -841,3 +936,131 @@ figcaption {
   outline-offset: 3px;
 }
 
+.case-research {
+  margin-top: 3rem;
+}
+
+.case-research h2 {
+  margin-bottom: 1rem;
+}
+
+.case-research p {
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+  max-width: 65ch;
+}
+
+.research-block {
+  margin-bottom: 1.4rem;
+}
+
+.research-block h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+/* Key insight callout */
+.key-insight {
+  border-left: 3px solid var(--accent);
+  padding: 0.9rem 1.2rem;
+  margin: 1.8rem 0;
+  background: var(--surface-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+/* bridge sentence */
+.research-bridge {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+  /* Research cards: subtle, compact card layout for research summaries */
+  .research-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 1.25rem;
+  }
+  .research-card {
+    background: rgba(17,17,17,0.02);
+    border: 1px solid rgba(17,17,17,0.06);
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+  }
+  :root[data-theme='dark'] .research-card,
+  [data-theme='dark'] .research-card {
+    background: rgba(255,255,255,0.02);
+    border-color: rgba(255,255,255,0.04);
+  }
+  .research-card h3 { margin: 0 0 0.5rem 0; font-size: 1rem; }
+  .research-card ul { margin: 0; padding-left: 1.1rem; color: var(--muted-color); }
+  .research-card li { margin-bottom: 0.45rem; }
+
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.impact-card {
+  background: #f7f8fa;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.impact-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.impact-card ul {
+  padding-left: 18px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.impact-summary {
+  /* background: #f1f4f9; */
+  /* padding: 22px; */
+  font-weight: 500;
+  color: #333;
+  line-height: 1.6;
+  background: rgba(17, 17, 17, 0.02);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+}
+
+
+.impact-results {
+  margin: 1rem 0 1.25rem;
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.impact-reinforcement {
+  margin-bottom: 1.25rem;
+  color: #444;
+}
+
+.impact-quote {
+  border-left: 3px solid var(--accent);
+  padding-left: 14px;
+  font-style: italic;
+  color: #333;
+  line-height: 1.5;
+}
+
+.impact-quote cite {
+  display: block;
+  margin-top: 6px;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #666;
+}

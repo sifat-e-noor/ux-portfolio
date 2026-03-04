@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const order = [
-  { key: 'ux-unite', index: 1, path: '/case-studies/ux-unite', title: 'UX Unite', subtitle: 'Community-driven UX collaboration platform.' },
-  { key: 'synesis-convay', index: 2, path: '/case-studies/synesis-convay', title: 'Synesis Convay', subtitle: 'Conversational AI for enterprise workflows.' },
+  { key: 'synesis-convay', index: 1, path: '/case-studies/synesis-convay', title: 'Synesis Convay', subtitle: 'Conversational AI for enterprise workflows.' },
+  { key: 'ux-unite', index: 2, path: '/case-studies/ux-unite', title: 'UX Unite', subtitle: 'Community-driven UX collaboration platform.' },
   { key: 'ai-reading', index: 3, path: '/case-studies/ai-reading', title: 'AI Reading', subtitle: 'Assistive reading tools powered by AI.' },
 ];
 

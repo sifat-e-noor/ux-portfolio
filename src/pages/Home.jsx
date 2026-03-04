@@ -30,7 +30,7 @@ export default function Home() {
         </header>
 
         <p className="hero-subtitle">
-          Senior UX Designer with 6+ years of experience designing complex,
+          With 6+ years of experience designing complex,
           data-driven products across industry and research contexts.
           I help teams create clear, trustworthy, and usable experiences—
           especially where AI supports human decision-making.
