@@ -60,6 +60,27 @@ export default function AiReading() {
         </figcaption>
       </figure>
 
+      {/* Highlight Metrics & Testimonial */}
+      <div className="metrics-testimonial-grid">
+        <aside className="metrics-card">
+          <h3>Highlight Metrics</h3>
+          <ul>
+            <li><strong>14/14 </strong> User found the application useful and intuitive</li>
+            <li><strong>13/14</strong> reading task completed successfully</li>
+            <li><strong>14/14</strong> user satisfaction</li>
+          </ul>
+        </aside>
+
+        <aside className="testimonial-card">
+          <h3>User Feedback</h3>
+          <blockquote>
+            "I would be interested in using this application for reading, it has a nice interface and seems like I would be able to log
+            my reading preferences."
+            <cite>— Female, 26, University Student, Avid reader, High-tech Proficiency</cite>
+          </blockquote>
+        </aside>
+      </div>
+
       {/* Executive Summary */}
       <section className="case-summary">
         <ul>
@@ -260,7 +281,7 @@ export default function AiReading() {
       <section>
         <h2>Outcome & Impact</h2>
         <p>
-          The prototype enabled researchers to observe reading behaviour in authentic settings while maintaining user trust and attention. Semi-structured evaluations and think-aloud testing confirmed that the interaction model felt intuitive and unobtrusive.
+          The prototype enabled researchers to observe reading behaviour in authentic settings while maintaining user trust and attention. With 14 participant including researcher and High schools and unviersity students with amid and casual readers semi-structured evaluations and think-aloud testing confirmed that the interaction model felt intuitive and unobtrusive.
         </p>
 
         <p>

@@ -102,15 +102,45 @@ export default function UxUnite() {
           access to previous job posts influences trust and application decisions.
         </p>
         <p>
-          Research findings were consolidated into a Notion report. From the
+          Two culture probe studies were conducted among UX job seekers mix of seniorities, UX roles & job types using structured booklets to investigate:
+        </p>
+
+        <div className="research-cards">
+          <aside className="research-card">
+            <h3>Navigation of the Company Insights job post module</h3>
+            <ul>
+              <li>14 UX job seekers participated</li>
+              <li>Transparent hiring patterns (frequency, recurrence, last posted) increase confidence.</li>
+              <li>Mid-level groupings (roles, categories) help users interpret patterns.</li>
+              <li>Micro-level details are valuable only when user-initiated.</li>
+              <li>Repeated hiring for the same role may signal instability without context.</li>
+              <li>This feature is not about old jobs — it is about trust and informed opt-in/opt-out decisions.</li>
+            </ul>
+          </aside>
+
+          <aside className="research-card">
+            <h3>Data expectations and interpretation needs</h3>
+            <ul>
+              <li>11 respondents</li>
+              <li>Users prefer visual summaries over text-heavy listings.</li>
+              <li>Progressive disclosure is essential: overview first, details on demand.</li>
+              <li>Trust increases when data sources and update timestamps are visible.</li>
+            </ul>
+          </aside>
+        </div>
+
+        <p>
+          Research findings were synthesised into a structured Notion report. From the
           available job post data, scoped down to high-signal metrics such as
           role frequency, category distribution, and recency.
         </p>
-        <p>
-          Findings revealed that transparency is valued only when data is
+
+        <div className="impact-summary">
+          <strong>Key insight:</strong> Findings revealed that transparency is valued only when data is
           synthesised into clear patterns rather than presented as raw listings.
           The opportunity was to design for interpretability, not data exposure.
-        </p>
+        </div>
+        <p>The opportunity was not to expose more data, but to design for interpretability, relevance, and trust.</p>
 
         <div className="slideshow" role="region" aria-label="Research artifacts slideshow">
           <div className="slides">
@@ -150,11 +180,17 @@ export default function UxUnite() {
           representations of hiring history, balancing interpretability with
           feasibility.
         </p>
+        <p>Design directions were directly informed by research insights:</p>
         <ul>
-          <li>Pattern-first summaries before detailed job listings</li>
-          <li>Visual timelines and clustered representations over dense tables</li>
-          <li>Progressive disclosure to manage cognitive load</li>
+          <li>Pattern-first summaries to surface hiring trends before detailed listings</li>
+          <li>Visual timelines and clustered role groupings to support mid-level pattern interpretation</li>
+          <li>Progressive disclosure to present overview first, with details on demand</li>
+          <li>Context signals such as recency indicators and data transparency cues to strengthen trust</li>
         </ul>
+        <p>
+          These decisions shifted the feature from displaying past jobs to supporting informed, confident decision-making.
+          The current design iteration focuses on a hiring history section that synthesises job post data into clear, interpretable patterns while allowing users to explore details as needed.
+        </p>
 
         <div className="slideshow" role="region" aria-label="Design artifacts slideshow">
           <div className="slides">
