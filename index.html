@@ -5,9 +5,17 @@
     <link rel="icon" type="image/png" href="/src/assets/brand-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ux-portfolio</title>
+    <script>
+      // If the path is exactly '/ux-portfolio' (no trailing slash), 
+      // redirect to '/ux-portfolio/' to satisfy Vite and Router.
+      if (window.location.pathname === '/ux-portfolio') {
+        window.location.replace(window.location.href + '/');
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
+
 </html>

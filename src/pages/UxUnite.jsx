@@ -52,7 +52,7 @@ export default function UxUnite() {
         <p className="meta">
           Product Designer(UX) · Company Insight Page · UX Unite
         </p>
-        <p className="meta viewing-status">Viewing: Case Study 2 — Hiring Transparency Feature (WIP)</p>
+        <p className="meta viewing-status">Viewing: Case Study 2 — Hiring Transparency Feature</p>
         <CaseStudyPager current="ux-unite" />
       </header>
 
@@ -64,10 +64,10 @@ export default function UxUnite() {
           src={heroImg}
           alt="Research insights translated into hiring history wireframes"
         />
-        <p className="caption">
+        <figcaption>
           Synthesised research insights informing early design concepts for
           visualising previous job posts.
-        </p>
+        </figcaption>
       </section>
 
       {/* Executive Summary */}
@@ -98,11 +98,10 @@ export default function UxUnite() {
       <section>
         <h2>Research & Insights</h2>
         <p>
-          Research explored how candidates interpret hiring patterns and whether
-          access to previous job posts influences trust and application decisions.
+          Research explored how candidates interpret hiring patterns and whether access to previous job posts influences trust and application decisions.
         </p>
         <p>
-          Two culture probe studies were conducted among UX job seekers mix of seniorities, UX roles & job types using structured booklets to investigate:
+          Using qualitative research methods, two cultural probe studies were conducted with UX job seekers across different seniority levels, roles, and job types. Structured booklets were used to investigate:
         </p>
 
         <div className="research-cards">
@@ -245,12 +244,38 @@ export default function UxUnite() {
       <section>
         <h2>Outcome & Impact</h2>
         <p>
-          The work established a validated problem space, a scoped data strategy,
-          and cross-functional alignment across product, design, and engineering.
+          The work established a validated problem space, a scoped data strategy, and cross-functional alignment across product, design, and engineering around how hiring history should be surfaced.
         </p>
+
+        <div className="research-cards">
+          <aside className="research-card">
+            <h3>Product Direction</h3>
+            <ul>
+              <li>Shifted the feature goal from “show more job post data” to “design for clarity and trust”</li>
+              <li>Identified high-signal hiring metrics (role frequency, category distribution, recency)</li>
+              <li>Introduced a pattern-first approach to summarising hiring behaviour</li>
+            </ul>
+          </aside>
+          <aside className="research-card">
+            <h3>Team Alignments</h3>
+            <ul>
+              <li>Created a shared understanding of how hiring patterns influence candidate trust</li>
+              <li>Aligned stakeholders on progressive disclosure and visual summaries over raw listings</li>
+              <li>Provided a clear foundation for future feature development</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div className="impact-summary">
+          <p>
+            The work reframed hiring history from a secondary data list into a decision-support feature that helps candidates interpret 
+            company behaviour more confidently. By prioritising patterns over raw listings, the design direction focuses on clarity, trust, 
+            and informed decision-making.
+          </p>
+        </div>
+
         <p>
-          It reframed the feature direction from “show more data” to “design for
-          clarity and trust.”
+
         </p>
       </section>
 

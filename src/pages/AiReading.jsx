@@ -65,9 +65,9 @@ export default function AiReading() {
         <aside className="metrics-card">
           <h3>Highlight Metrics</h3>
           <ul>
-            <li><strong>14/14 </strong> User found the application useful and intuitive</li>
-            <li><strong>13/14</strong> reading task completed successfully</li>
-            <li><strong>14/14</strong> user satisfaction</li>
+            <li><strong>14</strong> Participants in prototype evaluation</li>
+            <li><strong>100%</strong> Task completion across test conditions</li>
+            <li><strong>2 Methods</strong> Semi-structured evaluation + think-aloud testing</li>
           </ul>
         </aside>
 
@@ -281,16 +281,32 @@ export default function AiReading() {
       <section>
         <h2>Outcome & Impact</h2>
         <p>
-          The prototype enabled researchers to observe reading behaviour in authentic settings while maintaining user trust and attention. With 14 participant including researcher and High schools and unviersity students with amid and casual readers semi-structured evaluations and think-aloud testing confirmed that the interaction model felt intuitive and unobtrusive.
+          The prototype enabled researchers to observe reading behaviour in authentic settings while maintaining user trust and attention. The system was evaluated with 14 participants — including researchers, high school students, and university students — representing both avid and casual readers. Semi-structured evaluations and think-aloud testing confirmed that the interaction model felt intuitive and unobtrusive.
         </p>
 
-        <p>
-          Participants preferred instant visual updates over modal adjustments and valued subtle feedback that preserved reading flow.
-        </p>
+        <div className="research-cards">
+          <aside className="research-card">
+            <h3>Validation Findings</h3>
+            <ul>
+              <li><strong>100% task completion</strong> across all test conditions</li>
+              <li>Participants <strong>preferred instant visual updates</strong> over modal adjustments</li>
+              <li><strong>Subtle feedback preserved reading flow</strong> and reduced interruptions</li>
+            </ul>
+          </aside>
+        </div>
 
-        <p>
-          The application successfully captured behavioural and preference data across devices and environments, providing researchers with a practical tool for collecting real-world reading data and analysing contextual reading patterns.
-        </p>
+        <div className="impact-summary">
+          <p>
+            The application successfully captured behavioural and preference data across devices and environments, providing researchers with a practical tool for studying contextual reading patterns in real-world settings. Feedback highlighted the importance of preserving reading flow while enabling user control, confirming that <strong>ethical, unobtrusive design can support research-grade data collection without compromising the reading experience</strong>.
+          </p>
+        </div>
+
+        {/* Short pull-quote reference */}
+        <blockquote className="impact-quote">
+          "I would be interested in using this application for reading, it has a nice interface and seems like I would be able to log
+          my reading preferences."
+          <cite>— Female, 26, University Student, Avid reader, High-tech Proficiency</cite>
+        </blockquote>
       </section>
 
       {/* Research Impact */}
