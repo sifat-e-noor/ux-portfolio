@@ -9,16 +9,17 @@
       // Restore deep links redirected by public/404.html on GitHub Pages.
       (function restoreSpaRouteFromQuery() {
         var query = window.location.search;
-        if (!query || query.indexOf('/&') === -1) {
+        if (!query || query.indexOf('?/') !== 0) {
           return;
         }
 
-        var restored = query
+        var restoredRoute = query
           .slice(1)
-          .replace('/&', '/')
+          .replace(/^\//, '/')
           .replace(/~and~/g, '&');
 
-        var newUrl = window.location.pathname + restored + window.location.hash;
+        var basePath = window.location.pathname.replace(/\/$/, '');
+        var newUrl = (basePath || '') + restoredRoute + window.location.hash;
         window.history.replaceState(null, '', newUrl);
       })();
 
