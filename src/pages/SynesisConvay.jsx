@@ -379,7 +379,7 @@ export default function SynesisConvay() {
             The redesigned workflows reduced cognitive load and enabled users to
             manage meetings with greater speed, clarity, and confidence. Adoption
             increased, daily usage rose by <strong>20%</strong>, and overall user
-            satisfaction reached <strong>85%</strong>. post-launch.
+            satisfaction reached <strong>85%</strong> post-launch.
           </p>
         </div>
 

@@ -30,14 +30,13 @@ export default function Home() {
         </header>
 
         <p className="hero-subtitle">
-          With 6+ years of experience designing complex,
-          data-driven products across industry and research contexts.
-          I help teams create clear, trustworthy, and usable experiences—
-          especially where AI supports human decision-making.
+          I design enterprise and AI-enabled systems that help people make better decisions—clearly, confidently, and with trust.
+
+          With 6+ years of experience across industry and research, I specialise in simplifying complex, data-driven products into usable, scalable, and human-centered experiences.
         </p>
 
         <p className="hero-statement">
-          I focus on turning complexity into confident user action.
+          I turn complexity into confident user action.
         </p>
 
         {/* Primary hero CTAs removed per request */}
@@ -48,26 +47,26 @@ export default function Home() {
         <h2 id="focus-heading">My Focus</h2>
 
         <p>
-          I work closely with product and engineering teams to design <b>human-centered solutions for complex systems</b>, grounded in research, usability, and practical constraints.
+          I work at the intersection of product, research, and engineering—designing systems that are not only usable, but meaningful in real-world contexts.
         </p>
 
         <ul>
           <li>
-            <strong>UX Research & Problem Framing: </strong>
-            Defining the right problems through qualitative and quantitative research, and turning insights into clear product direction.
+            <strong>Problem Framing & UX Research: </strong>
+            I identify the right problems through qualitative and quantitative research, translating insights into clear product direction and design decisions.
           </li>
           <li>
-            <strong>UX & Product Design: </strong>
-            Designing interactions, information architecture, and scalable design systems for enterprise and AI-enabled products.
+            <strong>Complex Product & System Design: </strong>
+            I design interactions, workflows, and information architecture for enterprise and AI-driven products—balancing user needs, business goals, and technical constraints.
           </li>
           <li>
             <strong>Human-Centered AI Design: </strong>
-            Designing explainable, controllable, and supportive AI interactions that reduce cognitive load and build user trust.
+            I design AI systems that support—not replace—human judgment. This includes making AI behavior understandable, controllable, and aligned with user goals.
           </li>
-          <li>
+          {/* <li>
             <strong>Cross-Functional Collaboration: </strong>
             Aligning design decisions with business goals and technical feasibility through close collaboration with stakeholders.
-          </li>
+          </li> */}
         </ul>
       </section>
 
@@ -81,14 +80,40 @@ export default function Home() {
           </p>
 
           <p>
-            Led UX strategy and system design for an enterprise virtual collaboration platform, simplifying complex scheduling and live meeting workflows across institutional environments.
+            Led UX strategy and system design for an enterprise collaboration platform, simplifying complex scheduling and live meeting workflows across institutional environments.
           </p>
-          <p>I directed a team of six designers, defined role-based interaction models, and established a scalable design system supporting long-term product growth.</p>
+          <p>I led a team of six designers, defined role-based interaction models, and built a scalable design system to support long-term product growth.</p>
 
           <p className="outcome">
-            <strong>Outcome:</strong> Improved usability and task efficiency, increased
-            enterprise adoption, and reduced interface-related support requests.
+            <strong>Outcome:</strong>
           </p>
+
+          <div className="highlight-homepage-metrics">
+            <aside className="research-card">
+              <ul>
+                <li><strong>30% reduction</strong> in meeting setup time</li>
+              </ul>
+            </aside>
+
+            <aside className="research-card">
+              <ul>
+                <li><strong>25% faster scheduling</strong> with simplified flow</li>
+              </ul>
+            </aside>
+
+            <aside className="research-card">
+              <ul>
+                <li><strong>90% of users preferred</strong> the redesigned scheduler</li>
+              </ul>
+            </aside>
+
+            <aside className="research-card">
+              <ul>
+                <li><strong>20% increase</strong> in task success rate</li>
+              </ul>
+            </aside>
+          </div>
+          <p>The redesigned experience reduced cognitive load and improved clarity, enabling users to manage meetings with greater speed, confidence, and control. Adoption increased, daily usage rose by <strong>20%</strong>, and overall user satisfaction reached <strong>85%</strong> post-launch.</p>
 
           {/* PRIMARY CTA — placed after outcome */}
           <a href="/ux-portfolio/case-studies/synesis-convay" className="primary-btn">
@@ -102,9 +127,9 @@ export default function Home() {
       <section className="ai-philosophy" aria-labelledby="ai-heading">
         <h2 id="ai-heading">AI & Human-Centered Design</h2>
 
-        <p>AI introduces both opportunity and responsibility. AI changes how decisions are made—and who remains accountable.</p>
+        <p>AI introduces both opportunity and responsibility. It changes how decisions are made—and who remains accountable.</p>
 
-        <p>My design principles:</p>
+        <p>My approach is grounded in three principles:</p>
         <ul>
           <li>Explainability over opacity</li>
           <li>User agency over blind automation</li>
@@ -112,13 +137,13 @@ export default function Home() {
         </ul>
 
         <p>
-          I believe AI-enabled systems should help people make better decisions, not simply faster ones—and should always respect human judgment.
+          In practice, I design systems where users can understand, question, and override AI decisions—ensuring technology supports human judgment rather than replacing it.
         </p>
 
         <Link to="/ai-and-ux" className="case-link" aria-label="Read my AI & UX approach">
           <span>Read my AI & UX approach</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-            <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </Link>
       </section>
@@ -127,8 +152,8 @@ export default function Home() {
       <section className="home-cta" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Let’s Work Together</h2>
 
-        <p>I am currently seeking <strong>Senior UX Designer, Product Designer (UX-focused), or UX Researcher</strong> roles in Denmark, 
-        particularly in teams working with AI-enabled or complex digital products.</p>
+        <p>I am currently seeking <strong>Senior UX Designer, Product Designer (UX-focused), or UX Researcher</strong> roles in Denmark,
+          particularly in teams working with AI-enabled or complex digital products.</p>
         <p>If you are building systems where clarity, trust, and human decision-making matter—I would be glad to contribute.</p>
 
         <div className="cta-icons" role="navigation" aria-label="Contact links">

@@ -971,13 +971,19 @@ figcaption {
   line-height: 1.6;
 }
 
-
 /* bridge sentence */
 .research-bridge {
   margin-top: 1rem;
   font-size: 0.95rem;
   opacity: 0.85;
 }
+  /* Research cards: subtle, compact card layout for research summaries */
+  .highlight-homepage-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 1.25rem;
+  }
   /* Research cards: subtle, compact card layout for research summaries */
   .research-cards {
     display: grid;
