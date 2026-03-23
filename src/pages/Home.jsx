@@ -91,7 +91,7 @@ export default function Home() {
           </p>
 
           {/* PRIMARY CTA — placed after outcome */}
-          <a href="/case-studies/synesis-convay" className="primary-btn">
+          <a href="/ux-portfolio/case-studies/synesis-convay" className="primary-btn">
             Explore the full case study
           </a>
         </article>
@@ -127,9 +127,9 @@ export default function Home() {
       <section className="home-cta" aria-labelledby="cta-heading">
         <h2 id="cta-heading">Let’s Work Together</h2>
 
-        <p>
-          Open to <strong>Senior UX Designer, Product Designer (UX-focused)</strong>, and <strong>UX Researcher</strong> roles in Denmark, particularly in teams working with AI-enabled or complex digital products.
-        </p>
+        <p>I am currently seeking <strong>Senior UX Designer, Product Designer (UX-focused), or UX Researcher</strong> roles in Denmark, 
+        particularly in teams working with AI-enabled or complex digital products.</p>
+        <p>If you are building systems where clarity, trust, and human decision-making matter—I would be glad to contribute.</p>
 
         <div className="cta-icons" role="navigation" aria-label="Contact links">
           {/* Get in touch */}

@@ -20,8 +20,8 @@ export default function CaseStudies() {
       <header>
         <h1>Case Studies</h1>
         <p className="intro">
-          Selected work showing how I design, research, and deliver usable,
-          scalable, and responsible digital products.
+          Selected work demonstrating how I lead complex product decisions — from research and strategy to scalable, real-world implementation.
+          {/* Sharper and more senior: Selected work demonstrating product leadership across enterprise systems, research-driven features, and AI-informed design. */}
         </p>
       </header>
 
@@ -105,7 +105,7 @@ export default function CaseStudies() {
             />
           </figure>
           <h2>Designing a Research Tool for Real-World Reading Behaviour</h2>
-          <p className="meta">UX Researcher, UX Designer & Developer · Human-Centered AI (DTU)</p>
+          <p className="meta">UX Researcher, Designer & Developer · DTU</p>
           <p>
             Designed and developed a research application capturing authentic reading behaviour and preferences in real environments while preserving natural reading experiences.
           </p>

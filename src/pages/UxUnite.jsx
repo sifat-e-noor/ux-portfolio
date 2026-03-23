@@ -74,7 +74,7 @@ export default function UxUnite() {
       <section className="case-summary">
         <ul>
           <li><strong>Product:</strong> Company Insights — Hiring Transparency Feature</li>
-          <li><strong>Role:</strong> Product Designer (UX)</li>
+          <li><strong>Role:</strong> Product Designer (UX & Research)</li>
           <li><strong>Focus:</strong> Hiring transparency and candidate trust</li>
           <li><strong>Status:</strong> Work in progress</li>
         </ul>
