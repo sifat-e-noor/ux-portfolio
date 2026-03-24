@@ -103,7 +103,7 @@ export default function Home() {
 
             <aside className="research-card">
               <ul>
-                <li><strong>90% of users preferred</strong> the redesigned scheduler</li>
+                <li><strong>90% users preferred</strong> redesigned scheduler</li>
               </ul>
             </aside>
 

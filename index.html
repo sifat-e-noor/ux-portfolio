@@ -6,7 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ux-portfolio</title>
     <script>
-      // If the path is exactly '/ux-portfolio' (no trailing slash), 
+      // Restore deep links redirected by public/404.html on GitHub Pages.
+      (function restoreSpaRouteFromQuery() {
+        var query = window.location.search;
+        if (!query || query.indexOf('?/') !== 0) {
+          return;
+        }
+
+        var restoredRoute = query
+          .slice(1)
+          .replace(/^\//, '/')
+          .replace(/~and~/g, '&');
+
+        var basePath = window.location.pathname.replace(/\/$/, '');
+        var newUrl = (basePath || '') + restoredRoute + window.location.hash;
+        window.history.replaceState(null, '', newUrl);
+      })();
+
+      // If the path is exactly '/ux-portfolio' (no trailing slash),
       // redirect to '/ux-portfolio/' to satisfy Vite and Router.
       if (window.location.pathname === '/ux-portfolio') {
         window.location.replace(window.location.href + '/');

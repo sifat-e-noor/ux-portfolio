@@ -980,7 +980,7 @@ figcaption {
   /* Research cards: subtle, compact card layout for research summaries */
   .highlight-homepage-metrics {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1rem;
     margin: 1rem 0 1.25rem;
   }
