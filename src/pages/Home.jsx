@@ -24,7 +24,7 @@ export default function Home() {
           <div className="hero-header-text">
             <p className="hero-name">Sifat-E-Noor</p>
             <h1 id="hero-heading">
-              Senior UX Designer for AI-Driven Digital Products
+              Senior UX Designer & Researcher | AI-Driven Digital Products
             </h1>
           </div>
         </header>
